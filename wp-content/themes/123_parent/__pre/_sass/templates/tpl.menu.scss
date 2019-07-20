@@ -1,0 +1,565 @@
+@media only screen {
+    section.tpl_page_menu {
+        > .container {
+            // For all menu styles
+            .menu_section {
+                display: none;
+                // For all menus styles with an image provided
+                .image_provided {
+                    width: 100%;
+                    margin: 0 auto;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    margin-bottom: 15px;
+                    height: 0;
+                    padding-bottom: 100%;
+                }
+                // All unordered list menu items
+                > ul.menu_items {
+                    display: inline-block;
+                }
+                > h2,
+                &.menu_text_sub_group_half > div > h2 {
+                    @include fontS-50;
+                    font-weight: 800;
+                    text-transform: capitalize;
+                }
+                > p,
+                &.menu_text_sub_group_half > div > p {
+                    @include fontS-24; 
+                    margin: 5px 0 35px;
+                    font-family: "Times New Roman", Times, serif;
+                    font-style: italic;
+                    font-weight: 500;
+                    color: getVar($gustavo, colors, gray10);
+                    border-bottom: 3px solid getVar($colors, accent);
+                    padding-bottom: 20px;
+                }
+                // Menu Type 
+                &.menu_photo_tiled_x3  {
+                    ul.menu_items {
+                        display: flex;
+                        flex-flow: row wrap;
+                        li.menu_item {
+                            display: flex;
+                            flex-flow: column nowrap;
+                            > h3.menu__item-price {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-flow: row wrap;
+                                @include fontS-20;
+                                font-weight: 700;
+                                text-align: left;
+                                margin-bottom: 5px;
+                                > div {
+                                    > span {
+                                        @include fontS-18;
+                                        position: relative;
+                                        top: -5px;
+                                    }
+                                }
+                            }
+                            > div.menu__item-description {
+                                text-align: left;
+                                @include fontS-14;
+                                color: getVar($gustavo, colors, gray10);
+                            }
+                        }
+                    }
+                }
+                // Menu Type
+                &.menu_photo_list {
+                    // Menu Section Title
+                    > h2 {
+                        text-align: center;
+                    }
+                    .menu_items {
+                        width: 100%;
+                        .menu_item {
+                            display: flex;
+                            margin: 0 0 20px;
+                            .image_provided {
+                                margin: 0 10px 0 0;
+                                width: 30%;
+                                padding-bottom: 30%;
+                            }
+                            >div:last-of-type {
+                                text-align: left;
+                                width: 70%;
+                                vertical-align: top;
+                                > h3 {
+                                    @include fontS-24;
+                                    font-weight: 900;
+                                }
+                                > div.menu__item-description {
+                                    @include fontS-24;
+                                    font-family:"Times New Roman", Times, serif;
+                                    font-style: italic; 
+                                    padding-bottom: 10px;
+                                    border-bottom: 4px dotted getVar($gustavo, colors, gray1);
+                                    margin-bottom: 20px;
+                                    color: getVar($gustavo, colors, gray10);
+                                }
+                                > div.menu__item-price {
+                                    @include fontS-24;
+                                    color: getVar($gustavo, colors, gray2);
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+                // Menu Type
+                &.menu_text_half {
+                    > h2 { 
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        position: relative;
+                        font-family: 'Slabo', serif; 
+                        letter-spacing: normal;
+                        margin-bottom: 20px;
+                        @include fontS-40;
+                        span {
+                            background: getVar($colors, white, full);
+                            padding: 0 15px;
+                            position: relative;
+                        }
+                        &:before {
+                            border-top: 1px solid getVar($gustavo, colors, gray1);
+                            bottom: 0;
+                            content: "";
+                            left: 0;
+                            margin: 0 auto;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                        }
+                    }
+                    > p {
+                        display: none;
+                    }
+                    .menu_items {
+                        display: flex;
+                        flex-flow: row wrap;
+                        .menu_item:nth-child(odd){
+                            padding-right: 40px;
+                        }
+                        .menu_item {
+                            flex: 0 0 50%;
+                            margin-bottom: 30px;
+                            // menu items description
+                            > div.menu__item-description {
+                                @include fontS-16;
+                                text-align: left;
+                                color: getVar($gustavo, colors, gray10);
+                            }
+                            // menu items title
+                            > h3.menu__item-price {
+                                display: flex;
+                                flex-flow: row wrap;
+                                font-weight: 700; 
+                                justify-content: space-between;
+                                border-bottom: 3px solid getVar($colors, accent);
+                                padding-bottom: 15px;
+                                margin-bottom: 15px;
+                                text-align: left;
+                                @include fontS-20;
+                                > span {
+                                    font-weight: 600;
+                                    color: getVar($gustavo, colors, gray3);
+                                }
+                            }
+                        }
+                    }
+                }
+                // Menu Type
+                &.menu_text_list_center {
+                    > p {
+                        margin-bottom: 20px;
+                    }
+                    .menu_item {
+                        margin: 20px 0;
+                        > div.menu__item-description {
+                            @include fontS-24;
+                            font-family: "Times New Roman", Times, serif;
+                            font-style: italic;
+                            color: getVar($gustavo, colors, gray10);
+                        }
+                        > h3.menu__item-price {
+                            @include fontS-24;
+                            text-align: center;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            margin-bottom: 5px;
+                            > span {
+                                font-weight: 500;
+                                &:before {
+                                    content: "";
+                                    border-left: 2px solid #aaabad;
+                                    margin: 0 15px 0 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+                // Menu Type
+                &.menu_text_list_left {
+                    text-align: left;
+                    > p {
+                        padding-bottom: 10px;
+                        margin-bottom: 20px;
+                        border-bottom: 5px dotted getVar($colors, accent);
+                    }
+                    .menu_items {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .menu_item {
+                            margin: 10px 0;
+                            > h3.menu__item-price {
+                                text-transform: uppercase;
+                                display: flex;
+                                @include fontS-24;
+                                font-weight: 800;
+                                justify-content: space-between;
+                            }
+                            > div.menu__item-description {
+                                @include fontS-24;
+                                font-family: "Times New Roman", Times, serif;
+                                font-style: italic;
+                                color: getVar($gustavo, colors, gray10);
+                            }
+                            .block {
+                                margin: 0 0 20px 0;
+                            }
+                        }
+                    }
+                }
+                // Menu Type
+                &.menu_text_sub_group_half {
+                    flex-flow: row wrap;
+                    >div:nth-child(odd) {   
+                        padding-right: 40px;
+                    }
+                    > div {
+                        flex: 0 0 50%; 
+                        text-align: left;
+                        > p {
+                            display: none;
+                        }
+                        > h2 {
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            position: relative;
+                            font-family: 'Slabo', serif; 
+                            letter-spacing: normal;
+                            margin-bottom: 20px;
+                            @include fontS-40;
+                            span {
+                                background: getVar($colors, white, full);
+                                padding: 0 15px 0 0;
+                                position: relative;
+                            }
+                            &:before {
+                                border-top: 1px solid getVar($gustavo, colors, gray1);
+                                bottom: 0;
+                                content: "";
+                                left: 0;
+                                margin: 0 auto;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                            }
+                        }
+                        .menu_items {
+                            .menu_item {
+                                margin: 10px 0;
+                                > div.menu__item-description {
+                                    @include fontS-16;
+                                    color: getVar($gustavo, colors, gray10);
+                                }
+                                > h3.menu__item-price {
+                                    flex-flow: row wrap;
+                                    display: flex;
+                                    @include fontS-20;
+                                    font-weight: 700;
+                                    justify-content: space-between;
+                                    border-bottom: 3px solid getVar($colors, accent);
+                                    padding-bottom: 15px;
+                                    margin-bottom: 15px;
+                                    > span {
+                                        font-weight: 600;
+                                        color: getVar($gustavo, colors, gray3);
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }
+            // Pills and Divider Menu Styles
+            #tabs_style__divider,
+            #tabs_style__pills {
+                .menu_photo_tiled_x3 {
+                    @include gridLayout(100%, 4, 2%, false);
+                }
+            }
+            // Menu style
+            #tabs_style__divider {
+                > ul.button_group {
+                    margin-bottom: 30px;
+                    text-align: left;
+                    border-bottom: 2px solid getVar($gustavo, colors, gray1);
+                    display: flex;
+                    flex-flow: row nowrap;
+                    > li:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    > li {
+                        display: inline-block;
+                        text-transform: uppercase;
+                        @include fontS-14;
+                        font-weight: 600;
+                        margin: 0 2px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        border-top: 2px solid getVar($gustavo, colors, gray1);
+                        border-left: 2px solid getVar($gustavo, colors, gray1);
+                        border-right: 2px solid getVar($gustavo, colors, gray1);
+                        transition: color 0.3s ease-in-out;
+                        background-color: getVar($gustavo, colors, gray1);
+                        a {
+                            color: getVar($gustavo, colors, gray2);
+                            height: 100%;
+                            display: block;   
+                            padding: 5px 10px;
+                            &:focus {
+                                background: getVar($colors, white, full);
+                            }
+                            &:hover,
+                            &:active {
+                                color: getVar($colors, white, full);
+                                background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                            }
+                        }
+                        &.tab_active {
+                            a {
+                                color: getVar($gustavo, colors, gray2);
+                                background: getVar($colors, white, full);
+                                &:hover {
+                                    color: getVar($colors, white, full);
+                                    background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // Menu style
+            #tabs_style__pills {
+                >ul.button_group {
+                    display: flex; 
+                    flex-flow: row wrap; 
+                    justify-content: center;
+                    margin-bottom: 30px;
+                    align-items: stretch;
+                    &:after {
+                        content: "";
+                        flex: auto;
+                    }
+                    li {
+                        margin: 5px 0;
+                        a {
+                            @include fontS-16;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            text-align: center;
+                            background-color: getVar($colors, white, full);
+                            border: 2px solid getVar($gustavo, colors, gray1);
+                            border-radius: 30px;
+                            padding: 5px 25px;
+                            color: getVar($gustavo, colors, gray1);
+                            display: block;
+                            margin: 0 5px;
+                            &:hover {
+                                border: 2px solid getVar($gustavo, colors, gray1);
+                                color: getVar($colors, white, full);
+                                background-color: getVar($gustavo, colors, gray1);
+                            } 
+                            &:active,
+                            &:focus {
+                                border: 2px solid getVar($colors, accent);
+                                background-color: getVar($colors, accent);
+                                color: getVar($colors, white, full);
+                            }
+                        }
+                    }
+                    li.tab_active {
+                        a {
+                            border: 2px solid getVar($colors, accent);
+                            background-color: getVar($colors, accent);
+                            color: getVar($colors, white, full);
+                            &:hover {
+                                border: 2px solid getVar($gustavo, colors, gray1);
+                                color: getVar($colors, white, full);
+                                background-color: getVar($gustavo, colors, gray1);
+                            } 
+                        }
+                    }
+                }
+            }
+            // Menu style
+            #tabs_style__sidebar {
+                display: flex;
+                flex-flow: row nowrap;
+                > .menu_area {
+                    flex: 1 1 80%;
+                    .menu_photo_tiled_x3 {
+                        @include gridLayout(100%, 3, 2%, false);
+                    }
+                }
+                > ul.button_group {
+                    flex: 1 1 20%;
+                    margin-right: getVar($sizing, gutter, px, normal);
+                    flex-flow: column nowrap;
+                    li {
+                        border: none;
+                        text-align: left;
+                        a {
+                            white-space: nowrap;
+                            display: block;
+                            padding: 0 getVar($sizing, gutter, px, small);
+                            letter-spacing: 1px;
+                            font-weight: 600;
+                            color: getVar($gustavo, colors, gray2);
+                            @include fontS-16;
+                            line-height: 44px;
+                            border-bottom: 1px solid getVar($gustavo, colors, gray1);
+                            transition: background-color 0.3s ease-in-out, 
+                                color 0.3s ease-in-out, 
+                                border 0.3s ease-in-out;
+                            &:active,
+                            &:focus {
+                                background-color: getVar($colors, accent);
+                                color: getVar($colors, white, full);
+                                border-bottom: 1px solid getVar($colors, accent);
+                            }
+                            &:hover {
+                                color: getVar($gustavo, colors, gray2);
+                                background-color: getVar($gustavo, colors, gray1);
+                                border-bottom: 1px solid transparent;
+                            }
+                        }
+                    }
+                    li.tab_active {
+                        a {
+                            color: getVar($colors, white, full);
+                            background-color: getVar($colors, accent);
+                            border-bottom: 1px solid getVar($colors, accent);
+                            &:hover {
+                                color: getVar($gustavo, colors, gray2);
+                                background-color: getVar($gustavo, colors, gray1);
+                                border-bottom: 1px solid transparent;
+                            }
+                        }
+                    }
+                }
+            } 
+            // Menu Section that is active
+            .current_food_menu {
+                display: block;
+            }
+            // Menu Section that is active and should use flexbox
+            .current_food_menu.menu_flex {
+                display: flex;
+            }  
+        }
+    }    
+}
+
+@media only screen and (max-width: 1280px){
+    section.tpl_page_menu {
+        > .container {
+            #tabs_style__divider,
+            #tabs_style__pills {
+                .menu_photo_tiled_x3 {
+                    @include gridLayout(100%, 3, 2%, false);
+                }
+            }
+            #tabs_style__sidebar {
+                > .menu_area {
+                    > .menu_section {
+                        &.menu_photo_tiled_x3 {
+                            @include gridLayout(100%, 2, 2%, false);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 960px){
+    section.tpl_page_menu {
+        > .container {
+            #tabs_style__divider,
+            #tabs_style__pills {
+                .menu_photo_tiled_x3 {
+                    @include gridLayout(100%, 2, 2%, false);
+                }
+            }
+            #tabs_style__sidebar {
+                > .menu_area {
+                    > .menu_section {
+                        &.menu_photo_tiled_x3 {
+                            @include gridLayout(100%, 1, 2%, false);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    section.tpl_page_menu {
+        > .container {
+            #tabs_style__divider {
+                > ul.button_group {
+                    flex-flow: column nowrap;
+                    align-items: end;
+                    > li {
+                        margin-bottom: getVar($sizing, gutter, px, tiny);
+                    }
+                    > li:last-of-type {
+                        margin-bottom: 0;
+                    }
+                } 
+            }
+            #tabs_style__sidebar {
+                flex-flow: column nowrap;
+                > ul.button_group {
+                    margin:0 0 20px;
+                }
+            }
+            #tabs_style__pills {
+                >ul.button_group {
+                    &:after {
+                        content: "";
+                        flex: inherit;
+                    }
+                }
+            }
+            .tabs {
+                flex-flow: column nowrap;
+                > .menu_area {
+                    > .menu_section {
+                        &.menu_photo_tiled_x3 {
+                            @include gridLayout(100%, 2, 2%, false);
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,466 @@
+@media only screen {
+    section.block__services {
+        > .container {
+            &.services__one {
+                .site__grid {
+                    >ul {
+                        max-width: 1200px;
+                        >li {
+                            >a { 
+                                color: inherit;
+                                &:hover,
+                                &:active,
+                                &:focus {
+                                    >div:last-of-type {
+                                        border: 3px solid getVar($gustavo, colors, gray1);
+                                    }
+                                }
+    
+                                // image
+                                >div:first-of-type {
+                                    width: min-content;
+                                    position: relative;
+                                    z-index: 2;
+                                    border-radius: 50%;
+                                    border: 5px solid getVar($colors, white, full);
+                                    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                    margin: 0 auto;
+                                    @include site__bgimage($g : false, $z : true);
+                                    
+                                }
+    
+                                // content
+                                >div:last-of-type {
+                                    border: 3px solid transparent;
+                                    padding-top: 154px;
+                                    position: relative;
+                                    margin-top: -137px;
+                                    background-color: getVar($gustavo, colors, gray7);
+                                    border-radius: 20px;
+                                    min-height: 400px;
+    
+                                    >h3,
+                                    >div.service__details {
+                                        padding: 0 30px;
+                                    }
+    
+                                    >h3 {
+                                        margin: 0 0 10px 0;
+                                        font-family: "Gotham", Helvetica, sans-serif;
+                                        @include fontS-34;
+                                        font-weight: 500;
+                                    }
+    
+                                    >.service_price {
+                                        font-family: "Gotham", Helvetica, sans-serif;
+                                        font-weight: 500;
+                                        @include fontS-24;
+                                        margin-top: 20px;
+                                        padding-bottom: 40px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__two,
+            &.services__three {
+                > div:last-of-type {
+                    > ul {
+                        > li {
+                            margin: getVar($sizing, gutter, px, normal) auto;
+                            > a {
+                                color: inherit;
+                                display: flex;
+                                .image {
+                                    background-repeat: no-repeat;
+                                    background-position: center center;
+                                    background-size: cover;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                h3 {
+                                    display: flex;
+                                    flex-flow: row wrap;
+                                    justify-content: space-between;
+                                    @include fontS-34;
+                                    font-weight: 800;
+                                    padding: 0 0 10px 0;
+                                    font-weight: 800;
+                                    border-bottom: 4px dotted getVar($colors, accent);
+                                    margin: 0 0 getVar($sizing, gutter, px, small) 0;
+                                }
+                                div.service__details {
+                                    text-align: justify;
+                                }
+                            }
+                        }
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 30%;
+                                }
+                                > div:last-of-type {
+                                    flex: 1 0 70%;
+                                }
+                            }
+                        }
+                        > li:nth-child(even) {
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 70%;
+                                }
+                                > div:last-of-type {
+                                    flex: 1 0 30%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__two {
+                > div:last-of-type {
+                    > ul {
+                        > li {
+                            > a {
+                                justify-content: space-between;
+                                align-items: center;
+                                h3 {
+                                    border-bottom: 4px dotted getVar($colors, white, full);
+                                    flex-flow: row wrap;
+                                }
+                                .image {
+                                    border-radius: 50%;
+                                    height: 0;
+                                    padding-bottom: 100%; 
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                        > li:nth-child(odd){
+                            > a {
+                                > div:first-of-type {
+                                    flex: 0 0 30%;
+                                    border: 5px solid getVar($colors, white, full);
+                                    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                    border-radius: 50%; 
+                                    z-index: 2;
+                                    @include site__bgimage($z : false, $g : false);
+                                }
+                                > div:last-of-type {
+                                    flex: 0 0 62%;
+                                    padding: 30px 50px 30px 50px;
+                                    background-color: getVar($gustavo, colors, gray7);
+                                    border: 3px solid transparent;
+                                    min-height: 250px;
+                                    border-radius: 20px;
+                                    border: 3px solid transparent;
+                                    position: relative;
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        border-top: 40px solid transparent;
+                                        border-bottom: 40px solid transparent;
+                                        border-right: 40px solid getVar($gustavo, colors, gray7);
+                                        top: 50%;
+                                        left: -33px;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:first-of-type {
+                                        > .image {
+                                            transform: scale(1.2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    flex: 0 0 62%;
+                                    padding: 30px 50px 30px 50px;
+                                    background-color: getVar($gustavo, colors, gray7);
+                                    min-height: 250px;
+                                    border-radius: 20px;
+                                    position: relative;
+                                    border: 3px solid transparent;
+                                    &:after {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        border-top: 40px solid transparent;
+                                        border-bottom: 40px solid transparent;
+                                        border-left: 40px solid getVar($gustavo, colors, gray7);
+                                        top: 50%;
+                                        right: -33px;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                                > div:last-of-type {
+                                    flex: 0 0 30%;
+                                    border: 5px solid getVar($colors, white, full);
+                                    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                    border-radius: 50%; 
+                                    @include site__bgimage($z : false, $g : false);
+                                    z-index: 2;
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:last-of-type {
+                                        > .image {
+                                            transform: scale(1.2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__three {
+                > div:last-of-type {
+                    > ul {
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:last-of-type {
+                                    padding: 80px getVar($sizing, gutter, px, large) 0 getVar($sizing, gutter, px, large);
+                                    border-top: 4px solid getVar($colors, gray, light);
+                                    border-right: 4px solid getVar($colors, gray, light);
+                                    border-bottom: 4px solid getVar($colors, gray, light);
+                                    display: flex;
+                                    flex-flow: column nowrap;
+                                    min-height: 400px;
+                                }
+                                > div:first-of-type {
+                                    width: 100%;
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:last-of-type {
+                                        border-top: 4px solid getVar($gustavo, colors, gray1);
+                                        border-right: 4px solid getVar($gustavo, colors, gray1);
+                                        border-bottom: 4px solid getVar($gustavo, colors, gray1);
+                                    }
+                                }
+                            }
+                        }
+                        > li:nth-child(even) {
+                            > a {
+                                > div:last-of-type {
+                                    width: 100%;
+                                }
+                                > div:first-of-type {
+                                    padding: 80px getVar($sizing, gutter, px, large) 0 getVar($sizing, gutter, px, large);
+                                    border-top: 4px solid getVar($colors, gray, light);
+                                    border-left: 4px solid getVar($colors, gray, light);
+                                    border-bottom: 4px solid getVar($colors, gray, light);
+                                    display: flex;
+                                    flex-flow: column nowrap;
+                                    min-height: 400px;
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:first-of-type {
+                                        border-top: 4px solid getVar($gustavo, colors, gray1);
+                                        border-left: 4px solid getVar($gustavo, colors, gray1);
+                                        border-bottom: 4px solid getVar($gustavo, colors, gray1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 960px){
+    section.site__block.block__services {
+        > .container {
+            &.services__two {
+                > div:last-of-type {
+                    > ul {
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 50%;
+                                }
+                                > div:last-of-type {
+                                    margin-left: 30px;
+                                    padding: 30px;
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    margin-right: 30px;
+                                    padding: 30px;
+                                    flex: 1 0 50%;
+                                }
+                                > div:last-of-type {
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__three {
+                > div:last-of-type {
+                    > ul {
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 50%;
+                                }
+                                > div:last-of-type {
+                                    padding: 80px 10px 40px 10px;
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 50%;
+                                    padding: 80px 10px 40px 10px;
+                                }
+                                > div:last-of-type {
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    section.site__block.block__services {
+        > .container {
+            &.services__one {
+                .site__grid {
+                    >ul {
+                        >li {
+                            >a { 
+                                >div:first-of-type {
+                                    div.image {
+                                        max-width: 60vw;
+                                        max-height: 60vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__two {
+                > div:last-of-type {
+                    > ul {
+                        > li {
+                            > a {
+                                flex-flow: column nowrap;
+                            }
+                        }
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    width: 60%;
+                                }
+                                > div:last-of-type {
+                                    margin-left: 0;
+                                    width: 100%;
+                                    &:before {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    order: 2;
+                                    width: 100%;
+                                    margin-right: 0;
+                                    &:after {
+                                        display: none;
+                                    }
+                                }
+                                > div:last-of-type {
+                                    width: 60%;
+                                    order: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__three {
+                > div:last-of-type {
+                    > ul {
+                        > li {
+                            > a {
+                                flex-flow: column nowrap;
+                                margin: 0 auto;
+                            }
+                            .image {
+                                height: 0;
+                                width: 100%;
+                                margin: 0 auto;
+                                padding-bottom: 100%;
+                            }
+                        }
+                        > li:nth-child(odd){
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 100%;
+                                }
+                                > div:last-of-type {
+                                    padding: 20px 10px 20px 10px;
+                                    min-height: min-content;
+                                    border-top: none;
+                                    border-left: 4px solid getVar($colors, gray, light);
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:last-of-type {
+                                        border-left: 4px solid getVar($gustavo, colors, gray1);
+                                    }
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    padding: 20px 10px 20px 10px;
+                                    border-top: none;
+                                    border-right: 4px solid getVar($colors, gray, light);
+                                    order: 2;
+                                    min-height: min-content;
+                                }
+                                > div:last-of-type {
+                                    flex: 1 0 100%;
+                                    order: 1;
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:first-of-type {
+                                        border-right: 4px solid getVar($gustavo, colors, gray1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

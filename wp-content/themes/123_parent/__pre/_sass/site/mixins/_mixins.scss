@@ -1,0 +1,156 @@
+@import 'includes/mixins.utility';
+@import 'includes/_mixins.grid';
+@import 'includes/mixins.hero-alignment';
+
+
+
+// CUT THIS AND REPLACE WITH FLEXBOXGRID
+@mixin flexGrid($w, $c, $g, $s : false) {
+
+    // grid wrapper
+    >ul {
+        margin: 0 auto 0 auto; // stretch box to fill its container
+        display: flex; // flexbox
+        flex-flow: row wrap; // row wrap
+        width: $w; // set width to value passed
+
+        // grid items
+        >li {
+            position: relative;
+            $i: colWidth($w, $c, $g); // define width
+            width: $i; // set width
+            margin: 0 $g $g 0; // default margins for all items
+
+            // overflow: hidden;
+            @if $s==true {
+                height: $i;
+
+                .image {
+                    height: $i;
+                }
+            }
+
+            &:nth-child(n+1) {
+                margin: 0 $g $g 0; // default margins re-set for the 'next' item
+            }
+
+            &:nth-child(#{$c}n) {
+                margin: 0 0 $g 0; // remove margin right from the last column of any column count
+            }
+
+            @if $c==1 {
+
+                &:nth-child(1n),
+                &:nth-child(n+1) {
+                    margin-bottom: getVar($sizing, gutter, px, normal);
+                }
+            }
+        }
+    }
+}
+
+// 
+// TURN THIS INTO A CLASS
+@mixin site__bgimage($z : false, $g : false) {
+    overflow: hidden;
+    position: relative;
+
+    .image {
+        @include bgimage;
+        transform: scale(1);
+        transition: transform 0.4s ease;
+    }
+
+    @if ($z==true) {
+
+        &:hover,
+        &:active,
+        &:focus {
+            .image {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    @if($g==true) {
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background-color: transparentize(black, 0.5);
+            z-index: 2;
+            transition: opacity 0.4s ease;
+            opacity: 1;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:after {
+                opacity: 0.2;
+            }
+        }
+    }
+}
+
+// CUT THIS AND REPLACE WITH FLEXBOXGRID
+@mixin gridLayout($w, $c, $g, $s) {
+    >ul {
+        // display: inline-block;
+        width: $w;
+        margin: 0 auto 0 auto;
+        @include clearfix;
+
+        >li {
+            $d: colWidth($w, $c, $g);
+            width: $d;
+            height: auto;
+            float: left;
+
+            >a {
+                display: block;
+                width: 100%;
+            }
+
+            .image,
+            .block {
+                display: block;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .image,
+            .block {
+                @if $s==true {
+                    height: $d;
+
+                    &.rectangular_block {
+                        height: (colWidth($w, $c, $g) / 1.6);
+                    }
+
+                    &.less_size_block {
+                        $d: ($d - (2.4 * $g));
+                        height: $d;
+                        width: $d;
+                    }
+                }
+            }
+
+            &:nth-child(n+1) {
+                // this will reset each child before applying to the target
+                margin: 0 $g $g 0;
+            }
+
+            &:nth-child(#{$c}n) {
+                margin: 0 0 $g 0;
+            }
+        }
+    }
+}
+
+

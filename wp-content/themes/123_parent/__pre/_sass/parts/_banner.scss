@@ -1,0 +1,44 @@
+@media only screen {
+
+    .site__banner {
+        display: block;
+        width: 100%;
+        margin: 0 0 getVar($sizing, gutter, px, large) 0;
+        background-color: transparentize(gray, 0.66);
+        > .container {
+            background-color: transparentize(gray, 0.66);
+            width: getVar($sizing, content, full);
+            padding: getVar($sizing, gutter, px, large) 0;
+            margin: 0 auto;
+            text-align: center;
+            > h2 {
+                @include fontS-50;
+                > span {
+                    display: inline-block;
+                    letter-spacing: 1px;
+                    border-bottom: 5px solid black;
+                    padding: 0 getVar($sizing, gutter, px, large);
+                }
+            }
+            > h3 {
+                margin-top: getVar($sizing, gutter, px, normal);
+                @include fontS-34;
+            }
+        }
+    }  
+    
+}
+@media only screen and (min-width: 640px){
+    .site__banner {
+        > .container {
+            width: getVar($sizing, content, large);
+        }
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .site__banner {
+        >.container {
+            width: getVar($sizing, content, medium);
+        }
+    }
+}

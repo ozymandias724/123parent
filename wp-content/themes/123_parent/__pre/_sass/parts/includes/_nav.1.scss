@@ -1,0 +1,172 @@
+
+@media only screen {
+    //Header 1
+    header#opt_header_one {
+        position: relative;
+        padding: 0;
+        background-color: $black; 
+    } 
+    
+    // Header 1 top part
+    header#opt_header_one>div:first-of-type {
+        background-color: $nav_1_top_bar_background;
+        color: $nav_1_top_bar_text;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        height: 80px;
+        margin: 0 auto;
+        justify-content: space-between;
+        // Header logo
+        .header-logo {
+            padding: 10px;
+            > img {
+                max-height: 60px;
+            }
+        }
+        > div {
+            display: flex; 
+            flex-flow: row nowrap;
+            .site__iconlink-address {
+                margin-left: auto;
+                font-size: 14px;
+                margin-right: 20px
+            }
+    
+            .site__iconlink-phone > div {
+                display: flex;
+                flex-flow: column nowrap;
+                font-size: 13px;
+                align-items: flex-start;
+                color: $accent;
+                font-weight: 500;
+                letter-spacing: 1px;
+                > span {
+                    font-size: 16px;
+                    color: $white;
+                    letter-spacing: 0.5px; 
+                    font-weight: 600;
+                }
+            }
+        }
+
+        // Address and Phone number links
+        .site__iconlink {
+            color: $white;
+            display: flex;
+            align-items: center;
+            height: 80px;
+            line-height: 1.3em;
+            opacity: 1;
+            //Actions on hover, active and focus
+            &:hover, 
+            &:active,
+            &:focus {
+                opacity: 0.8;
+            }
+        }
+
+        // Address and Phone number links icons
+        .site__iconlink-address:before,
+        .site__iconlink-phone:before {
+            padding: 5px 11px;
+            margin-right: 10px;
+            border: 3px solid $accent;
+            border-radius: 100%;
+            color: $accent;
+            font-size: 14px;
+        }
+
+        // Phone number icon
+        .site__iconlink-phone:before {
+            margin-left: 10px;
+            transform: rotate(90deg);
+            padding: 7px 7px;
+        }
+
+        //Links of span elements inside top part of header
+        >div>a {
+            padding: 5px;
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s;
+            color: $nav_1_top_bar_text;
+        }
+    }
+
+    //Bottom part of header one
+    header#opt_header_one>div:last-of-type {
+        background-color: $nav_1_bottom_bar_background;
+        box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        width:100%;
+        display: block;
+        //Navigational menu
+        >nav {
+            align-items: center;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            text-transform: uppercase;
+            max-width: 1200px;
+            margin: 0 auto;
+            //Navigational menu links
+            .navlinks-item-link {
+                display: inline-block;
+                font-weight: 600;
+                color: $nav_1_menu_text;
+                padding: 0 10px;
+                line-height: 45px;
+                //Navigational menu actions on hover, active and focus
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $accent;
+                    color: white;
+                }
+            }
+            //Navigational menu list items
+            >ul>li {
+                margin-right: 0px;
+            }
+        }
+
+        //Social icons underordered list 
+        .site__social-media {
+            list-style: none;
+            flex-wrap: nowrap;
+            align-items: center;
+            display: flex;
+            justify-content: flex-end;
+            //Social icons list items
+            li {
+                margin-right: 10px;
+                &:last-of-type {
+                    margin-right: 0;
+                    padding-right: 0;
+                }
+                //Social icons list items links
+                a {
+                    padding: 0 10px;
+                    transition: color 0.3s;
+                    font-size: 16px;
+                    color: $nav_1_social_icons_color;
+                    line-height: 45px;
+                    display: inline-block;
+                    //Social icons list items actions on hover, active and focus
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $accent;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1280px){
+    header#opt_header_one 
+        > div:last-of-type > nav {
+        > div:first-of-type {
+            width: getVar($sizing, content, medium);
+        }
+    }
+}

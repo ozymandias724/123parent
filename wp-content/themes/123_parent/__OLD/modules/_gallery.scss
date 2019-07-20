@@ -1,0 +1,267 @@
+@media only screen {
+    ul {
+        list-style: none;
+    }
+    // Standard gallery with no tab style
+    #gallery {
+        margin: 60px auto;  
+        max-width: getVar($sizing, content, full);
+        $w: getVar($sizing, content, full);
+        $c: 2;
+        $g: getVar($sizing, gutter, vw, small);
+        $s: true;
+        @include flexGrid($w, $c, $g);
+        .gallery_item {
+            justify-content: center;
+            .gallery_image {
+                width: 100%;
+                background-size: cover; 
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 0 auto;
+            }
+        }
+        > h5 {
+            display: block;
+            text-align: center;
+            margin: 40px 0;
+            font-family: "Gotham", Helvetica, sans-serif;
+        }
+        .gallery_row {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        &.tab_pill,
+        &.tab_divider,
+        &.tab_sidebar {
+            .gallery_row {
+                display: none;
+                margin-top: -5px;
+            }
+            .active_row {
+                display: flex;
+            }
+        }
+        &.tab_pill {
+            #gallery_titles {
+                text-align: center;
+                margin-bottom: 15px; 
+            }
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: getVar($sizing, content, full);
+                $c: 2;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+            h5 {
+                display: block;
+                margin: 0 5px;
+                text-transform: uppercase;
+                padding: 10px 0;
+                a {
+                    padding: 10px 15px;
+                    border-radius: 20px;
+                    background-color: transparent;
+                    border: 2px solid getVar($gustavo, colors, gray1);
+                    color: getVar($gustavo, colors, gray3);
+                    &:active,
+                    &:focus,
+                    &.active_title,
+                    &.active_title:hover {
+                        color: $white;
+                        background-color: $accent;
+                        border: 2px solid transparent;
+                    }
+                    &:hover {
+                        border: 2px solid getVar($gustavo, colors, gray3);
+                        background-color: getVar($gustavo, colors, gray3);
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &.tab_divider {
+            #gallery_titles {
+                padding: 0 0 10px;
+            }
+            #gallery_titles:after {
+                content: "";
+                display: block;
+                border-bottom: 2px solid getVar($gustavo, colors, gray1);
+                margin-top: -5px;
+            }
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: getVar($sizing, content, full);
+                $c: 2;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+            h5 {
+                display: block;
+                padding: 10px 0;
+                margin: 0 2px;
+                text-transform: uppercase;
+                a {
+                    color: getVar($gustavo, colors, gray2);
+                    padding: 10px 15px;
+                    background-color: getVar($gustavo, colors, gray1);
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    border-top: 2px solid getVar($gustavo, colors, gray1);
+                    border-left: 2px solid getVar($gustavo, colors, gray1);
+                    border-right: 2px solid getVar($gustavo, colors, gray1);
+                    transition: color 0.3s ease-in-out;
+                    &:focus {
+                        color: getVar($colors, accent);
+                        background: getVar($colors, white, full);
+                        border-bottom: 3px solid transparent;
+                    }
+                    &:hover,
+                    &:active {
+                        color: getVar($colors, white, full);
+                        background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                    }
+                }
+            }
+        }
+        &.tab_sidebar {
+            display: flex;
+            flex-flow: column nowrap;
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: getVar($sizing, content, full);
+                $c: 2;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+            #gallery_titles {
+                margin-bottom: 15px;
+                h5:first-of-type > a {
+                    border-top: 1px solid getVar($gustavo, colors, gray1);
+                }
+                h5 {
+                    display: block;
+                    margin: 0;
+                    > a {
+                        color: getVar($gustavo, colors, gray2);
+                        padding: 10px 15px;
+                        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+                        display: block;
+                        border-bottom: 1px solid getVar($gustavo, colors, gray1);
+                        &:active, 
+                        &:focus {
+                            color: $white;
+                            background-color: $accent;
+                            border-bottom: 1px solid $accent;
+                        }
+                        &:hover {
+                            color: getVar($gustavo, colors, gray2);
+                            background-color: getVar($gustavo, colors, gray1);
+                            border-bottom: 1px solid transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 960px){
+    // Standard gallery
+    #gallery {
+        $w: getVar($sizing, content, full);
+        $c: 3;
+        $g: getVar($sizing, gutter, vw, small);
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        &.tab_sidebar {
+            flex-flow: row nowrap;
+            #gallery_titles {
+                padding: 0;
+                margin-right: 30px;
+                width: 35vw;
+            }
+            #gallery_rows {
+                $w: getVar($sizing, content, small);
+                $c: 2;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+        &.tab_pill h5 {
+            display: inline-block;
+        }
+        .gallery_item {
+            display: flex;
+            justify-content: center;
+        }
+        &.tab_divider {
+            #gallery_titles {
+                text-align: left;
+            }
+            h5 {
+                display: inline-block;
+            }
+        }
+        &.tab_pill,
+        &.tab_divider {
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: getVar($sizing, content, full);
+                $c: 3;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:1280px){
+    // Standard gallery
+    #gallery {
+        $w: getVar($sizing, content, medium);
+        $c: 4;  
+        $g: getVar($sizing, gutter, vw, tiny);
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        #gallery_rows {
+            padding: 0;
+        }
+        &.tab_divider {
+            #gallery_titles {
+                padding: 0 0px 10px;
+            }
+        }
+        &.tab_divider,
+        &.tab_pill {
+            width: getVar($sizing, content, medium);
+            #gallery_rows {
+                margin-bottom: 20px; 
+                $w: getVar($sizing, content, medium);
+                $c: 4;
+                $g: getVar($sizing, gutter, vw, tiny);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+        &.tab_sidebar {
+            width: getVar($sizing, content, medium);
+            #gallery_rows {
+                $w: 45vw;
+                $c: 3;
+                $g: getVar($sizing, gutter, vw, tiny);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
+}
+
+

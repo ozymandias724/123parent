@@ -1,0 +1,243 @@
+// 
+// 
+// 
+@media only screen {
+    //
+    //
+    //
+    section.hero {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        // 
+        .hero_foreground {
+            position: relative;
+            text-align: center;
+            background-color: transparent;
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            margin: 0 auto;
+            flex-flow: column nowrap;
+            padding: getVar($sizing, gutter, px, normal);
+            //
+            @include heroAlignment();
+            //
+            &.narrow {
+                $w: getVar($sizing, content, small);
+                width: $w;
+            }
+            &.normal {
+                $w: getVar($sizing, content, medium);
+                width: $w;
+            }
+            &.wide {
+                $w: getVar($sizing, content, large);
+                width: $w;
+            }
+            &.full {
+                $w: getVar($sizing, content, full);
+                width: $w;
+            }
+
+            //Title
+            h2 {
+                @include fontS-72;
+                z-index: 2;
+                color: $white;
+            }
+
+            img {
+                display: inline-block;
+                margin: 0;
+                max-height: 60%;
+                @include clearfix;
+            }
+
+            //Subtitle
+            p {
+                color: $white;
+                z-index: 2;
+                @include fontS-20;
+                margin: 10px 0;
+            }
+
+            //Button
+            a.site__button {
+                padding: 10px;
+                @include fontS-20;
+                padding: 13px 30px 15px;
+                border-radius: 30px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                line-height: 1em;
+                color: getVar($colors, white, full);
+                border: none;
+                display: inline-block;
+                background-color: getVar($colors, accent);
+                transition: background-color 0.25s;
+
+                //Button actions on hover, focus and active
+                &:hover,
+                &:focus,
+                &:active {
+                    opacity: 0.8;
+                }
+            }
+        }
+        // 
+        // 
+        // 
+        .hero_bgtint {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        // less height for color section by default (customizable)
+        // there is no custom field for the height of the hero type of color
+        &#hero_color {
+            height: auto;
+            min-height: 20vh;
+        }
+        &#hero_image {
+
+            > .image {
+                width: 100%;
+                height: 100%;
+                @include bgimage;
+            }
+        }
+        &#hero_slider {
+            > div#slick_slider_hero {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin: 0 0 0 0;
+
+                &.slick-slider,
+                .slick-list,
+                .slider_img,
+                .slick-track {
+                    height: 100%;
+                }
+                // wait until initialize?
+                &.slick-initialized {
+                    // opacity maybe?
+                }
+                img {
+                    @include bgimage;
+                }
+
+                margin-bottom: 0;
+
+                .slick-arrow {
+                    position: absolute;
+                    top: 50%;
+                    font-size: 50px;
+                    z-index: 3;
+                    padding: 10px;
+
+                    >i {
+                        color: white;
+                    }
+
+                    &.slick_next_arrow {
+                        right: 0;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        cursor: pointer;
+                    }
+                }
+            }
+            // Slider images
+            .slider_img {
+                object-fit: cover;
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+            }
+        }
+    }
+ 
+    // Hero Video
+    section.hero#hero_video { 
+        width: 100%;
+        // Video 
+        video {
+            @include centerer;
+            width: auto;
+            height: auto;
+            min-height: 100%;
+            min-width: 100%;
+            max-width: 100vw;
+            z-index: 2;
+        }
+    }
+
+    body {
+        &.header__three {
+            .hero_foreground {
+                padding-top: 140px;
+            }
+            &.banner_popup {
+                .hero_foreground {
+                    padding-top: 180px;
+                }
+            }
+        }
+        &.header__four {
+            .hero_foreground {
+                padding-top: 60px;
+            }
+        }
+        &.header__eight {
+            .hero_foreground {
+                padding-top: 125px;
+            }
+        }
+        &.header__nine {
+            .hero_foreground {
+                padding-top: 120px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 960px){
+    main {
+        margin-top: 0;
+    }
+    section.hero {
+        &#hero_image,
+        &#hero_slider {
+            .hero_foreground {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > .hero_foreground_grid {
+                    position: relative;
+                    &.topleft, &.topcenter, &.topright, &.middleleft, &.middlecenter, &.middleright, &.bottomleft, &.bottomcenter, &.bottomright {
+                        top:unset;
+                        right:unset;
+                        left:unset;
+                        bottom:unset;
+                        transform:none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

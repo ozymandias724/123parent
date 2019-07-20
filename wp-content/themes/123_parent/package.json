@@ -1,0 +1,36 @@
+{
+    "name": "123_parent",
+    "version": "1.0.0",
+    "description": "",
+    "main": "~Gruntfile.js",
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "@fortawesome/fontawesome-free": "^5.8.1",
+        "babel-core": "^6.26.3",
+        "babelify": "^10.0.0",
+        "fibers": "^3.1.1",
+        "grunt": "^1.0.4",
+        "grunt-autoprefixer": "^3.0.4",
+        "grunt-babel": "^8.0.0",
+        "grunt-browserify": "^5.3.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-exorcise": "^2.1.1",
+        "grunt-sass": "^3.0.2",
+        "load-grunt-tasks": "^4.0.0",
+        "node-sass": "^4.12.0",
+        "sass": "^1.22.3"
+    },
+    "dependencies": {
+        "jquery": "^3.4.0",
+        "magnific-popup": "^1.1.0",
+        "masonry-layout": "^4.2.2",
+        "paymentfont": "^1.2.5",
+        "reflex-grid": "^2.0.4",
+        "slick-carousel-browserify": "^1.6.12",
+        "smoothscroll-polyfill": "^0.4.4",
+        "zenscroll": "^4.0.2"
+    }
+}

@@ -1,0 +1,317 @@
+$accent : #386591;
+$header_icons_color : #fff;
+$padding_left_and_right : 5%;
+
+$nav_1_top_bar_background : #000;
+$nav_1_bottom_bar_background : #fff;
+$nav_1_top_bar_text : #fff;
+$nav_1_menu_text : #000;
+$nav_1_social_icons_color : #000;
+
+$nav_2_top_bar_phone : #fff;
+$nav_2_menu_text : #fff;
+
+$nav_3_top_bar_text : #fff;
+$nav_3_menu_text : #000;
+
+$nav_4_menu_text : #fff;
+$nav_4_top_bar_phone : #fff;
+
+$nav_5_quote_button : #fff;
+$nav_5_menu_text : #000;
+
+$nav_6_top_bar_text : #fff;
+$nav_6_menu_text : #000;
+$nav_6_quote_button_text: #fff;
+
+
+
+$second_primary : #b21717;
+$black : black;
+$black_opacity_none : rgba(0, 0, 0, 0);
+$second_black : #333333;
+$third_black : #383838;
+$opacity_level_below_one : 0.8;
+$opacity_level_below_one_2 : 0.3;
+$black_and_opacity_level_below_one : rgba(0, 0, 0, $opacity_level_below_one_2);
+
+$white : #fff;
+$tint : #fff;
+$blue: #32A2AE;
+$blue: #32A2AE;
+$blue_infinity_carpet : #1a69a0;
+$prestige_painters : #e91d62;
+$gray: #909090;
+$blue_darker : #257d87;
+
+$banner_height : 52px;
+$bp__lg : 1280px;
+$max_width: 1200px;
+
+@media only screen and (min-width: 960px) {
+
+    // hide mobile header
+    header.mobileheader {
+        display: none;
+    }
+
+    header {
+
+        .header-logo,
+        .custom-logo-link,
+        .custom-logo {
+            max-height: 100%;
+        }
+    }
+
+    // Basics across all headers
+    header.header {
+        position: fixed; // need to remove something from theme 3 that is effecting this
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 30px;
+        display: block;
+        z-index: 19;
+        font-size: 1.4rem;
+        padding-top: $banner_height;
+
+        // Logo link
+        a.header-logo,
+        a.custom-logo-link {
+            display: inline-block;
+            padding: 15px;
+
+            //Logo image
+            >img {
+                max-width: 180px;
+            }
+        }
+
+        // Navigational menu unordered list
+        ul.navlinks {
+            list-style-type: none;
+            display: flex;
+        }
+
+        // Navigational menu unordered list items
+        li.navlinks-item {
+            // display: inline-block;
+            margin-right: 10px;
+
+            // Last navigational menu unordered list item
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+        }
+
+        a.navlinks-item-link.scroll {
+            scroll-behavior: smooth;
+        }
+
+        // Header tint
+        span.header-tint {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: $tint;
+        }
+
+        // maybe this has to go, we have a new button class; and this is probably over-riding that
+        // Quote button
+        a.site__button-quote {
+            background-color: $accent;
+            color: white;
+            padding: 15px;
+            margin-left: 15px;
+        }
+
+        // Banners above the header
+        .opt__estimatebar,
+        .opt__topbanner {
+            width: 100%;
+            height: $banner_height;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    // 
+    @import './includes/nav.1';
+    // 
+    @import './includes/nav.2';
+    // 
+    @import './includes/nav.3';
+    // 
+    @import './includes/nav.4';
+    // 
+    @import './includes/nav.5';
+    // 
+    @import './includes/nav.6';
+    // 
+    @import './includes/nav.7';
+    // 
+    @import './includes/nav.8';
+    // 
+    @import './includes/nav.9';
+    // 
+    @import './includes/nav.10';
+
+    // Additional classes
+    // Sticky nav properties
+    .sticky {
+        position: fixed !important;
+        top: 0 !important;
+    }
+
+    // Hamburger icon link
+    .site__bars {
+        z-index: 21;
+        padding: 10px;
+
+        // Hamburger icon link spans 
+        >span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            background: #000;
+            border-radius: 3px;
+            transform-origin: 4px 0px;
+            transition: transform 0.3s ease-in-out,
+                background 0.3s ease-in-out,
+                opacity 0.35s ease-in-out;
+        }
+
+        // First and second span 
+        >span:nth-of-type(1),
+        >span:nth-of-type(2) {
+            margin-bottom: 4px;
+        }
+
+        // First span of hamburger icon link 
+        >span:nth-of-type(1) {
+            transform-origin: 0% 0%;
+        }
+
+        // Second span of hamburger icon link 
+        >span:nth-of-type(2) {
+            transform-origin: 0% 100%;
+        }
+
+        // First span of hamburger icon link to change hamburger icon
+        &.site_bars_changed>span:nth-of-type(1) {
+            opacity: 1;
+            transform: rotate(45deg) translate(0px, -10px);
+            background: #232323;
+        }
+
+        // Second span of hamburger icon link 
+        &.site_bars_changed>span:nth-of-type(2) {
+            transform: rotate(-45deg) translate(0px, 10px);
+        }
+
+        // Third span of hamburger icon link 
+        &.site_bars_changed>span:nth-of-type(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+    }
+
+    // Header 10 sidebar menu
+    .sidebar_menu {
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        z-index: 20;
+        font-size: 16px;
+        top: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transform: translateX(-100%);
+        padding-top: 250px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        opacity: 0;
+
+        // First div element in sidebar when sidebar menu has the above class
+        &.header_sidebar_cover_all {
+            position: fixed;
+            opacity: 1;
+            transform: translateX(0%);
+            box-shadow: -6px 0px 25px 0px $black;
+        }
+
+        // Navigational menu unordered list
+        .navlinks {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+
+        // Navigational menu unordered list items
+        .navlinks-item {
+            margin-right: 0 !important;
+            width: 100%;
+        }
+
+        // Navigational menu unordered list items links 
+        .navlinks-item-link {
+            border-bottom: 1px solid lightgrey;
+            color: $black;
+            padding: 12px 12px 12px 0;
+            display: block;
+            margin: 0 auto;
+            text-transform: capitalize;
+            width: 70%;
+            text-align: center;
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s;
+
+            // Actions on hover, active and focus
+            &:hover,
+            &:active,
+            &:focus,
+            .active_menu_link {
+                opacity: 1;
+                border-bottom: 1px solid $black;
+            }
+        }
+
+        // Telephone number link
+        .site__iconlink-phone {
+            display: inline-block;
+            padding: 10px 25px 10px 25px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            background-color: $black;
+            font-weight: 500;
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+            border: 1px solid $black;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px;
+
+            &:before {
+                display: none;
+            }
+
+            // Actions on hover, active and focus
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 1;
+                color: $black;
+                background-color: $black_opacity_none;
+            }
+        }
+    }
+}

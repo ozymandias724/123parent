@@ -1,0 +1,161 @@
+// PopUps
+@media only screen {
+    // the 'banner' part of the banner popup
+    #popups__banner {
+        position: fixed;
+        background-color: rgba(getVar($colors, black, full), 1);
+        text-align: center;
+        z-index: 100;
+        width: 100%;
+        left: 0;
+        top: 0;
+        > a {
+            display: block;
+            margin: 0 0 0 0;
+            > span {
+                padding-bottom: 2px;
+                color: getVar($colors, white, full);
+                font-weight: 600;
+                line-height: 30px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+                > span {
+                    opacity: 0.8;
+                }
+            }
+        }
+        ~ header.header,
+        ~ header.header > div.sticky,
+        ~ header.mobileheader {
+            margin-top: 29px;
+        }
+    }
+    #popups__banner_overlay,
+    #popups__header_overlay,
+    #popups__timed_overlay {
+        // initial state hidden
+        display: none; 
+        // fill entire screen with darkened overlay
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        min-height: 100vh;
+        overflow-y: auto;
+        background-color: rgba(getVar($colors, black, full), 0.8);
+        backdrop-filter: blur(2px);
+        // active state visibile
+        &.popups__banner_active,
+        &.popups__header_active,
+        &.popups__timed_active {
+            display: block;
+        }
+        .overlay__closebutton {
+            position: fixed;
+            top: 0;
+            right: 0;
+            font-size: 3rem;
+            z-index: 10000;
+            cursor: pointer;
+            color: white;
+            margin: 5vh 5vw;
+        }
+        // floating container for the popup
+        > .container {
+            // float container over the overlay
+            position: relative;
+            z-index: 9;
+            // default to black on white
+            background-color: getVar($colors, white, full);
+            box-shadow: 0px 0px 5px rgba(getVar($colors, black, full), 0.5);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px; 
+            // basic layout
+            max-width: 470px;
+            margin: 10vh auto;
+            border-radius: 20px;
+            // Image
+            > figure img {
+                width: 100%;
+                $w: 470px;
+                $c: 1;
+                $g: 0;
+                $s: true;
+                max-width: $w;
+                height: (colWidth($w, $c, $g) / 1.6);
+                border-top-left-radius: 19px;
+                border-top-right-radius: 19px; 
+            }
+            // Popup Content
+            > div {
+                padding: 0 40px 20px;
+                > div.popup_heading {
+                    @include fontS-34;
+                    text-align: center;
+                    font-family: "Gotham", "Helvetica", sans-serif;
+                    margin: getVar($sizing, gutter, px, small) 0;
+                    font-weight: 500;
+                    letter-spacing: -0.5px;
+                }
+                > div.popup_details {
+                    @include fontS-16; 
+                    line-height: 2.5rem;
+                    margin-bottom: 5px;
+                    text-align: justify;
+                }
+                > div.popup_form {
+                    text-align: left;
+                    .gform_wrapper {
+                        margin: 0;
+                        .top_label .gfield_label {
+                            display: none;
+                        }
+                        ul li.gfield {
+                            margin: 0 0 15px;
+                            padding: 0;
+                            input {
+                                padding: 10px;
+                            }
+                        }
+                        ul li.gfield:last-of-type {
+                            margin: 0;
+                        }
+                        .gform_footer {
+                            padding: 0;
+                        }
+                    }
+                    > p {
+                        font-weight: 700;
+                        border-bottom: 3px solid getVar($gustavo, colors, gray7);
+                        padding-bottom: getVar($sizing, gutter, px, tiny);
+                        margin-bottom: 20px;
+                    }
+                    input[type^="submit"] {
+                        color: getVar($colors, white, full);
+                        background-color: getVar($colors, black, full);
+                        padding: 15px 30px;
+                        font-weight: 600;
+                        border: none;
+                        width: 100%;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        letter-spacing: 1px;
+                    }
+                    .gfield_required {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
+} // end of all screen mq
+// probably wont need any media queries!
+// test for that tho.

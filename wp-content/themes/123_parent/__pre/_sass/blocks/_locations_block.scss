@@ -1,0 +1,110 @@
+//
+//
+@media only screen {
+    //
+    section.block__locations { 
+        > .container {
+
+            &.narrow {
+                width : getVar($sizing, content, percent, narrow);
+            }
+            &.normal {
+                width : getVar($sizing, content, percent, normal);
+            }
+            &.wide {
+                width : getVar($sizing, content, percent, wide);
+            }
+            &.full {
+                width : getVar($sizing, content, percent, full);
+            }
+            
+            div.locations__block-form {
+                text-align: left;
+                margin-top: 20px;
+
+                > p {
+                    font-weight: 700;
+                    border-bottom: 3px solid getVar($gustavo, colors, gray7);
+                    padding-bottom: getVar($sizing, gutter, px, tiny);
+                    margin-bottom: 20px;
+                }
+
+                input[type^="submit"] {
+                    color: getVar($colors, white, full);
+                    background-color: getVar($colors, black, full);
+                    padding: 10px 30px;
+                    font-weight: 600;
+                    border: none;
+                    cursor: pointer;
+                }
+                
+                label span {
+                    color: getVar($colors, black, full);
+                }
+            }
+            ul.columns {
+                position: relative;
+                display: flex;
+                flex-flow: row nowrap;
+                > li.left {
+                    flex: 0 0 47%;
+                    margin-right: 20px;
+                }
+                > li.right {
+                    flex: 0 0 50%;
+                }
+            }
+            ul.locations {
+                display: flex;
+                flex-flow: column nowrap;
+                > li {
+                    margin: 0 0 getVar($sizing, gutter, vw, normal) 0;
+
+                    > iframe {
+                        width: 100%;
+                    }
+                }
+            }
+        }  
+    }
+}
+
+
+// @media only screen and (max-width: 1280px){
+//     section.block__locations {
+//         > .container {
+//             &.narrow, &.normal, &.wide, &.full {
+//                 width : getVar($sizing, content, medium);
+//             }
+//         }
+//     }
+// }
+
+
+@media only screen and (max-width: 960px){
+    section.block__locations {
+        > .container {
+            // &.narrow, &.normal, &.wide, &.full {
+            //     width : getVar($sizing, content, wide);
+            // }
+            > ul.columns {
+                flex-flow: column nowrap;
+                > li.left, 
+                > li.right {
+                    flex: 0 0 100%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+// @media only screen and (max-width: 640px){
+//     section.block__locations {
+//         > .container {
+//             &.narrow, &.normal, &.wide, &.full {
+//                 width : getVar($sizing, content, full);
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,57 @@
+$nav10_width : 1200px;
+
+@media only screen {
+    //Header 10
+    header#opt_header_ten {
+        background-color: white;
+        padding: 0px;
+        box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        // Top part of header
+        > div:first-of-type {
+            margin: 0 auto;
+            max-width: $nav10_width;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            height: 81px;
+            position: relative;
+            .site__bars {
+                position: absolute;
+                left: 0;
+            }
+            // Logo 
+            .custom-logo-link {
+                padding: 10px;
+                margin: 0 auto;
+                > .custom-logo {
+                    max-height: 60px;
+                }
+            }
+            //Social icons unordered list
+            .site__social-media {
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+                position: absolute;
+                right: 0;
+                li a {
+                    padding: 0 15px;
+                    line-height: 81px;
+                    display: inline-block;
+                    color: getVar($colors, black, full);
+                }
+            }
+            //Hamburger icon link and social icons unordered list
+            .site__bars,
+            .site__social-media li a {
+                transition: color 0.3s;
+                //Hamburger icon link and social icons unordered list actions on hover, active and focus
+                &:hover,
+                &:active,
+                &:focus {
+                    color: $accent;
+                }
+            }
+        }
+    }
+}

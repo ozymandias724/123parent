@@ -1,0 +1,92 @@
+// 
+@media only screen {
+
+    main {
+        > section {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    body {
+        font-family: "Montserrat", serif;
+        font-weight: 300;
+        @include fontS-16;
+        letter-spacing: 0.33px;
+        display: flex;
+        flex-flow: column nowrap;
+        &.narrow {
+            > main {
+                max-width: 960px;
+            }
+        }
+        &.normal {
+            > main {
+                max-width: 1280px;
+            }
+        }
+        &.large {
+            > main {
+                max-width: 1620px;
+            }
+        }
+        > main {
+            flex: 1;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        &.js__noscroll {
+            overflow: hidden;
+        }
+        ul {
+            list-style-type: none;
+        }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Montserrat", serif;
+    }
+    h1 {
+        @include fontS-50;
+    }
+    h2 {
+        @include fontS-50;
+    }
+    h3 {
+        @include fontS-24;
+    }
+    h4 {
+        @include fontS-20;
+    }
+    h5 {
+        @include fontS-16;
+    }
+    h6 {
+        @include fontS-14;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    figure {
+        position: relative;
+        overflow: hidden;
+    }
+
+    img {
+        object-fit: cover;
+        height: auto;
+    }
+
+    blockquote {
+        border-left: 1px solid #000;
+        padding-left: getVar($sizing, gutter, px, small);
+        text-align: left;
+    }
+    
+}

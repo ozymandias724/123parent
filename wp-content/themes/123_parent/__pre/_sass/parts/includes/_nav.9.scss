@@ -1,0 +1,144 @@
+$nav9_width: 1200px;
+
+@media only screen {
+    //Header 9
+    header#opt_header_nine {
+        padding: 0px;
+        .outer_div {
+            background-color: $accent;
+        }
+        //Top bar including (Address, phone number and social icons)
+        .inner_div {
+            max-width: $nav9_width;
+            margin: 0 auto;
+            background-color: $accent;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            //Address and phone number link 
+            > .site__iconlink,
+            .site__social-media a {
+                line-height: 40px;
+            }
+            > .site__iconlink {
+                padding: 0 10px;
+                color: $white;
+                font-size: 1.2rem;
+                // Icons
+                &:before {
+                    margin-right: 10px;
+                }
+            }
+            // Phone, Address and Social Media links
+            > .site__iconlink,
+            .site__social-media a {
+                color: white;
+                transition: opacity 0.3s;
+            }
+            // Phone and Address links
+            > .site__iconlink:hover,
+            > .site__iconlink:active,
+            > .site__iconlink:focus,
+            // Social Media links
+            .site__social-media a:hover,
+            .site__social-media a:active,
+            .site__social-media a:focus {
+                opacity: 0.8;
+            }
+            //Social icons unordered list
+            .site__social-media {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                margin-left: auto;
+                font-size: 16px;
+                color: $white;
+            }
+            // Social icons list items
+            .site__social-media li {
+                margin-right: 5px;
+            }
+            // Last social icon
+            .site__social-media li:last-of-type {
+                margin-right: 0;
+            }
+            //Social icons unordered list items links
+            .site__social-media a {
+                padding: 0 10px;
+                display: inline-block;
+                color: $white;
+            }
+        }
+        //Bottom part including logo and navigational menu and quote button
+        > div:last-of-type {
+            background-color: $black_and_opacity_level_below_one;
+            .inner_div {
+                display: flex;
+                align-items: center;
+                background-color: transparent;
+                height: 110px;
+                margin: 0 auto;
+                max-width: $nav9_width;
+                //Logo link
+                .custom-logo-link {
+                    padding: 10px;
+                    margin-right: auto;
+                    > .custom-logo {
+                        max-height: 90px;
+                        max-width: 225px;
+                    }
+                }
+                //Navigational menu 
+                > nav {
+                    display: flex;
+                    align-items: center;
+                    margin-left: auto;
+                    //Navigational menu unordered list
+                    .navlinks {
+                        list-style: none;
+                        //Navigational menu unordered list items
+                        .navlinks-item {
+                            margin-right: 20px;
+                            &:last-of-type {
+                                margin-right: 0;
+                            }
+                            //Navigational menu unordered list items links
+                            .navlinks-item-link {
+                                padding: 0;
+                                border-bottom: 2px solid rgba(255, 255, 255, 0);
+                                color: $white;
+                                line-height: 40px;
+                                display: inline-block;
+                                text-transform: uppercase;
+                                //Navigational menu unordered list items links actions on hover, active and focus
+                                &:hover,
+                                &:active,
+                                &:focus,
+                                &.active_menu_link {
+                                    border-bottom: 2px solid rgba(255, 255, 255, 1);
+                                }
+                            }
+                        }
+                    }
+                    //Quote button link
+                    .site__button-quote {
+                        padding: 15px 25px;
+                        border-radius: 5px;
+                        border: 2px solid $white;
+                        color: $white;
+                        font-weight: 600;
+                        background-color: rgba(255, 255, 255, 0);
+                        transition: color 0.3s, border 0.3s, background-color 0.3s;
+                        //Quote button link actions on hover, active and focus
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: #606060;
+                            background-color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

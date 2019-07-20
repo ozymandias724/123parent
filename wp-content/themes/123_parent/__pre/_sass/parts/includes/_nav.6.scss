@@ -1,0 +1,144 @@
+$nav6_width: 1200px;
+
+@media only screen {
+    //Header 6
+    header#opt_header_six {
+        padding: 0px;
+        background-color: getVar($colors, accent);
+        //First div element, parent of address and phone number section and social icons section
+        > div:first-of-type {
+            display: flex;
+            background-color: getVar($colors, accent);
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            height: 50px;
+            max-width: $nav6_width;
+            margin: 0 auto;
+            // Address and Phone number
+            .site__iconlink-phone,
+            .site__iconlink-address {
+                color: $white;
+                margin-right: 10px;
+                font-size: 13px;
+                padding: 0 10px;
+                color: $nav_6_top_bar_text;
+                line-height: 50px;
+                font-weight: 500;
+                display: flex;
+                // Icon
+                &:before {
+                    font-size: 18px;
+                    margin-right: 10px;
+                }
+            }
+            //Phone
+            .site__iconlink-phone {
+                letter-spacing: 0.5px;
+                &:before {
+                    transform: rotate(90deg);
+                }
+            }
+            //Social icons unordered list
+            .site__social-media {
+                margin-left: auto;
+                list-style: none;
+                > li {
+                    font-size: 16px;
+                    color: white;
+                    display: inline-block;
+                    margin-right: 10px;
+                    &:last-of-type {
+                        margin-right: 0px;
+                    }
+                    > a {
+                        padding: 0 10px;
+                        color: $header_icons_color;
+                        line-height: 50px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        //Bottom part including logo and navigational menu and quote button
+        >div:last-of-type {
+            height: 110px;
+            background-color: white;
+            box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+            //Logo link
+            .custom-logo-link {
+                padding: 10px;
+                margin-right: auto;
+                margin-left: -10px; 
+                > .custom-logo {
+                    max-height: 90px;
+                }
+            }
+            //Navigational meu
+            > nav {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                max-width: $nav6_width;
+                line-height: 110px;
+                justify-content: flex-end;
+                //Navigational menu unordered list
+                .navlinks {
+                    margin-left: auto;
+                    list-style: none;
+                    //Navigational menu unordered list items
+                    .navlinks-item {
+                        margin-right: 15px;
+                        //Navigational menu unordered list items links
+                        .navlinks-item-link {
+                            padding: 0; 
+                            border-bottom: 3px solid rgba(233, 29, 98, 0);
+                            color: $nav_6_menu_text;
+                            line-height: 40px;
+                            display: inline-block;
+                            font-size: 16px;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            &:hover,
+                            &:active, 
+                            &:focus,
+                            .active_menu_link {
+                                border-bottom: 3px solid $accent;
+                            }
+                        }
+                    }
+                }
+            }
+            //Quote button link
+            .site__button-quote {
+                padding: 15px 25px;
+                border-radius: 30px;
+                background-color: $accent;
+                color: $nav_6_quote_button_text;
+                font-size: 16px;
+                font-weight: 700;
+                margin-left: 0;
+                line-height: initial;
+                border: none;
+            }           
+        }
+        //Phone number and address links
+        .site__iconlink-phone,
+        .site__iconlink-address,
+        //Social icons unordered list items links
+        .site__social-media > li > a,
+        //Quote button link
+        .site__button-quote {
+            transition: opacity 0.3s;
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 0.8;
+            }
+        }
+    }
+}
