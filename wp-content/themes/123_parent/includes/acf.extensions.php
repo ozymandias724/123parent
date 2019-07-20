@@ -5,6 +5,7 @@
  * 
 */
 if( function_exists('acf_add_options_page') ) {
+
 	// Main Theme Settings
 	acf_add_options_page(array(
 		'page_title' 	=> 'Sitewide Theme Settings',
@@ -14,7 +15,25 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url'      => 'dashicons-admin-settings',
 		'redirect'		=> false,
         'position' 		=> 3,
-	));
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'     => 'Header Settings',
+        'menu_title'    => 'Header',
+        'parent_slug'    => 'general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'     => 'Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'    => 'general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'     => 'Pop-Up Settings',
+        'menu_title'    => 'Pop-Ups',
+        'parent_slug'    => 'general-settings',
+    ));
 }
 
 

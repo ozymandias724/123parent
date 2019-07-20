@@ -1,0 +1,154 @@
+{
+    "key": "group_5d3374553b86c",
+    "title": "Header Settings",
+    "fields": [
+        {
+            "key": "field_5d338986a5ff1",
+            "label": "Header Settings",
+            "name": "header_settings",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5ca4debbe6281",
+                    "label": "Long Scroll",
+                    "name": "long_scroll",
+                    "type": "true_false",
+                    "instructions": "Enable a long-scroll style home page.\r\nInstead of linking to pages, the site navigation will scroll to sections on the home page.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Long Scroll",
+                    "ui_off_text": "Static Page"
+                },
+                {
+                    "key": "field_5cbc03906c96a",
+                    "label": "Fade Background",
+                    "name": "fade_background",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Fade In",
+                    "ui_off_text": "Always Show"
+                },
+                {
+                    "key": "field_5cbc0a4055691",
+                    "label": "Select Style",
+                    "name": "select_style",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Use Custom Style",
+                    "ui_off_text": "Use Default Style"
+                },
+                {
+                    "key": "field_5cbc02fd6c968",
+                    "label": "Style",
+                    "name": "style",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5cbc0a4055691",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "one": "One",
+                        "two": "Two",
+                        "three": "Three",
+                        "four": "Four",
+                        "five": "Five",
+                        "six": "Six",
+                        "seven": "Seven",
+                        "eight": "Eight",
+                        "nine": "Nine",
+                        "ten": "Ten"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-header"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Configure the Header",
+    "modified": 1563658656
+}

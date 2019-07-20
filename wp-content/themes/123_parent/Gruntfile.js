@@ -38,25 +38,6 @@ grunt.initConfig({
             },
         }
     },
-    autoprefixer: {
-        options: {
-            browsers: [
-                "> 1%",
-            ],
-        },
-        main: {
-            src: '__build/_css/main.css',
-            dest: '__build/_css/main.css',
-        },
-        admin: {
-            src: '__build/_css/_conditional/admin.css',
-            dest: '__build/_css/_conditional/admin.css',
-        },
-        login: {
-            src: '__build/_css/_conditional/login.css',
-            dest: '__build/_css/_conditional/login.css',
-        },
-    },
     watch: {
         sass: {
             files: ['__pre/_sass/**/*.scss'],
@@ -189,4 +170,4 @@ grunt.initConfig({
     }
 });
 // register the default task
-grunt.registerTask('default', ['sass', 'autoprefixer', 'browserify', 'exorcise', 'watch']);
+grunt.registerTask('default', ['sass', 'browserify', 'exorcise', 'watch']);
