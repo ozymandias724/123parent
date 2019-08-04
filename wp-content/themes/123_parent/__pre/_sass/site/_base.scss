@@ -1,92 +1,142 @@
 // 
-@media only screen {
+// 
+//      Basic Layout / Styling ( soft post-reset )
+// 
+// 
 
-    main {
-        > section {
+body.debug {
+
+    > main {
+        &, > section {
+            background-color: rgba(getVar($colors, white, mid), 0.1);
+            > .container {
+                background-color: rgba(getVar($colors, white, mid), 0.1);
+                .flexgrid {
+                    &, > ul > li {
+                        background-color: rgba(getVar($colors, white, mid), 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem;
+    // flex align the footer to the bottom
+    display: flex;
+    flex-flow: column nowrap;
+    >main {
+        flex: 1;
+        margin: 0 auto;
+        >section {
             display: block;
-            margin: 0 auto;
+            margin: 0 0 getVar($sizing, gutter, px, large) 0;
         }
     }
-    body {
-        font-family: "Montserrat", serif;
-        font-weight: 300;
-        @include fontS-16;
-        letter-spacing: 0.33px;
-        display: flex;
-        flex-flow: column nowrap;
-        &.narrow {
-            > main {
-                max-width: 960px;
-            }
-        }
-        &.normal {
-            > main {
-                max-width: 1280px;
-            }
-        }
-        &.large {
-            > main {
-                max-width: 1620px;
-            }
-        }
-        > main {
-            flex: 1;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        &.js__noscroll {
-            overflow: hidden;
-        }
-        ul {
-            list-style-type: none;
-        }
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Montserrat", serif;
-    }
-    h1 {
-        @include fontS-50;
-    }
-    h2 {
-        @include fontS-50;
-    }
-    h3 {
-        @include fontS-24;
-    }
-    h4 {
-        @include fontS-20;
-    }
-    h5 {
-        @include fontS-16;
-    }
-    h6 {
-        @include fontS-14;
+    .footer>.container,
+    .banner>.container,
+    .header>.container {
+        margin: 0 auto;
     }
 
-    a {
-        text-decoration: none;
+    &.sitewidth__narrow {
+
+        >main,
+        .footer>.container,
+        .banner>.container,
+        .header>.container {
+            max-width: 960px;
+        }
     }
 
-    figure {
-        position: relative;
+    &.sitewidth__medium {
+
+        >main,
+        .footer>.container,
+        .banner>.container,
+        .header>.container {
+            max-width: 1280px;
+        }
+    }
+
+    &.sitewidth__wide {
+
+        >main,
+        .footer>.container,
+        .banner>.container,
+        .header>.container {
+            max-width: 1440px;
+        }
+    }
+
+    &.js__noscroll {
         overflow: hidden;
     }
+}
 
-    img {
-        object-fit: cover;
-        height: auto;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
 
-    blockquote {
-        border-left: 1px solid #000;
-        padding-left: getVar($sizing, gutter, px, small);
-        text-align: left;
-    }
-    
+h1 {
+    @include fontS-50;
+}
+
+h2 {
+    @include fontS-34;
+}
+
+h3 {
+    @include fontS-24;
+}
+
+h4 {
+    @include fontS-20;
+}
+
+h5 {
+    @include fontS-16;
+}
+
+h6 {
+    @include fontS-14;
+}
+
+a {
+    text-decoration: none;
+}
+
+figure {
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    object-fit: cover;
+    height: auto;
+    margin: 0 auto;
+}
+
+blockquote {
+    border-left: 1px solid #000;
+    padding-left: getVar($sizing, gutter, px, small);
+    text-align: left;
+}
+
+hr,
+br {
+    line-height: 0;
+    font-size: 0;
+}
+
+ul {
+    list-style-type: none;
 }

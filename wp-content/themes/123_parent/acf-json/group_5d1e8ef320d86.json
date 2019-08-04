@@ -47,6 +47,37 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_5d3b87db3deb5": {
+                    "key": "layout_5d3b87db3deb5",
+                    "name": "map_block",
+                    "label": "Map Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d3b87e43deb6",
+                            "label": "Map Block",
+                            "name": "map_block",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5d3b82668fa2b"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5d1e8f198f830": {
                     "key": "5d1e8f198f830",
                     "name": "content_grid",
@@ -242,5 +273,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563248746
+    "modified": 1564210865
 }

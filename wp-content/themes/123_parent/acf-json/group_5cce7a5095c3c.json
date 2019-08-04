@@ -105,7 +105,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Default Coupon Post Template",
-    "modified": 1563097373
+    "modified": 1563672987
 }

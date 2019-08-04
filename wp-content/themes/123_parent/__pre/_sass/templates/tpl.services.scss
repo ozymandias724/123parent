@@ -231,9 +231,9 @@
                             > a {
                                 > div:last-of-type {
                                     padding: 80px getVar($sizing, gutter, px, large) 0 getVar($sizing, gutter, px, large);
-                                    border-top: 4px solid getVar($colors, gray, light);
-                                    border-right: 4px solid getVar($colors, gray, light);
-                                    border-bottom: 4px solid getVar($colors, gray, light);
+                                    border-top: 4px solid getVar($colors, white, light);
+                                    border-right: 4px solid getVar($colors, white, light);
+                                    border-bottom: 4px solid getVar($colors, white, light);
                                     display: flex;
                                     flex-flow: column nowrap;
                                     min-height: 400px;
@@ -257,9 +257,9 @@
                                 }
                                 > div:first-of-type {
                                     padding: 80px getVar($sizing, gutter, px, large) 0 getVar($sizing, gutter, px, large);
-                                    border-top: 4px solid getVar($colors, gray, light);
-                                    border-left: 4px solid getVar($colors, gray, light);
-                                    border-bottom: 4px solid getVar($colors, gray, light);
+                                    border-top: 4px solid getVar($colors, white, light);
+                                    border-left: 4px solid getVar($colors, white, light);
+                                    border-bottom: 4px solid getVar($colors, white, light);
                                     display: flex;
                                     flex-flow: column nowrap;
                                     min-height: 400px;
@@ -429,7 +429,7 @@
                                     padding: 20px 10px 20px 10px;
                                     min-height: min-content;
                                     border-top: none;
-                                    border-left: 4px solid getVar($colors, gray, light);
+                                    border-left: 4px solid getVar($colors, white, light);
                                 }
                                 &:hover, &:active, &:focus {
                                     > div:last-of-type {
@@ -443,7 +443,7 @@
                                 > div:first-of-type {
                                     padding: 20px 10px 20px 10px;
                                     border-top: none;
-                                    border-right: 4px solid getVar($colors, gray, light);
+                                    border-right: 4px solid getVar($colors, white, light);
                                     order: 2;
                                     min-height: min-content;
                                 }

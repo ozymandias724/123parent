@@ -133,7 +133,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Default Staff Post Template",
-    "modified": 1563127656
+    "modified": 1563672988
 }

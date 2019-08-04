@@ -15,12 +15,11 @@
             text-align: center;
             background-color: transparent;
             position: relative;
-            z-index: 2;
             height: 100%;
             display: flex;
             margin: 0 auto;
             flex-flow: column nowrap;
-            padding: getVar($sizing, gutter, px, normal);
+            padding: getVar($sizing, gutter, px, large) getVar($sizing, gutter, px, normal);
             //
             @include heroAlignment();
             //
@@ -41,13 +40,6 @@
                 width: $w;
             }
 
-            //Title
-            h2 {
-                @include fontS-72;
-                z-index: 2;
-                color: $white;
-            }
-
             img {
                 display: inline-block;
                 margin: 0;
@@ -57,8 +49,7 @@
 
             //Subtitle
             p {
-                color: $white;
-                z-index: 2;
+                color: getVar($colors, white, full);
                 @include fontS-20;
                 margin: 10px 0;
             }
@@ -95,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            z-index: -1;
         }
         // less height for color section by default (customizable)
         // there is no custom field for the height of the hero type of color
@@ -139,7 +130,6 @@
                     position: absolute;
                     top: 50%;
                     font-size: 50px;
-                    z-index: 3;
                     padding: 10px;
 
                     >i {
@@ -180,7 +170,6 @@
             min-height: 100%;
             min-width: 100%;
             max-width: 100vw;
-            z-index: 2;
         }
     }
 

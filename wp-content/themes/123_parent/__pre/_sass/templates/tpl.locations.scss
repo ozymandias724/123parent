@@ -1,3 +1,4 @@
+$accent : #fff;
 @media only screen {
     main#page_locations {
         div.container {
@@ -16,14 +17,14 @@
                                 > .location_heading {
                                     text-transform: uppercase;
                                     font-weight: 500;
-                                    color: $black;
+                                    color: getVar($colors, black, full);
                                     @include fontS-24;
                                     padding: 20px 0 10px;
                                 }
                                 > .location_address {
                                     font-weight: 500;
                                     @include fontS-20;
-                                    color: $black;
+                                    color: getVar($colors, black, full);
                                     padding: 0 0 20px;
                                 }
                                 > ul.site__social-media {
@@ -37,7 +38,7 @@
                                             line-height: 0;
                                             padding: 0 10px;
                                             text-align: center;
-                                            color: $black;
+                                            color: getVar($colors, black, full);
                                             transition: color 0.3s; 
                                             > div.location_social_image {
                                                 background-repeat: no-repeat;

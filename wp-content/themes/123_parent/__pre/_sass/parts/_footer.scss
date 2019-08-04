@@ -1,0 +1,45 @@
+// 
+// 
+// 
+// 
+// 
+
+footer.footer {
+    $g: getVar($sizing, gutter, px, normal);    
+    
+    >.container {
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: rgba(getVar($colors, black, mid),1);
+        >section {
+            margin: 0 $g $g 0;
+            flex: 1;
+            
+            &:last-of-type {
+                margin: 0 0 0 0;
+            }
+        }
+        
+        .logo>img {
+            height: 100px;
+            width: 100%;
+        }
+    }
+    
+    .banner {
+        >.container {
+            position: relative;
+            padding: getVar($sizing, gutter, px, small) 0;
+            background-color: rgba(getVar($colors, black, dark),1);
+            color: rgba(getVar($colors, white, dark),1);
+        }
+    }
+    .reseller-logo {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0 5px 5px 0;
+    }
+}

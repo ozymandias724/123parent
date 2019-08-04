@@ -81,7 +81,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 0,
+    "active": false,
     "description": "Basic WYSIWYG Block",
-    "modified": 1563252238
+    "modified": 1563672986
 }

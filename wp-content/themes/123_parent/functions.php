@@ -8,13 +8,94 @@ require('includes/util.general.php');       // helpers
 require('includes/acf.extensions.php');     // php extensions for acf (options pages, manually defined fields, other stuff?)
 require('classes/class.NavWalker.php');     // wordpress built in nav
 require('classes/class.NavHandler.php');    // handler for creating theme headers
-require('classes/customizer/class.Customizer.php');    // wordpress customizer stuff
 
 // 
 // setup the theme
 require('classes/class.Setup.php');         // Theme Setup / Init
 require('classes/class.UserRoles.php');     // Custom Users and Roles
 require('classes/class.customposts.php'); // custom posts
+require('classes/ext.kirki.php');
+
+
+
+
+// 
+// 
+// 
+
+
+
+if (!function_exists('return_icon_links')) {
+    /**
+     * Return Icon Links String
+     *
+     * @param array $res
+     * @return string
+     */
+    function return_icon_links( $res ){
+        // safety first
+        if (!empty($res)) {
+            
+            // create empty return string
+            $return['iconlinks'] = '';
+            
+            // create format string
+            $guide['iconlinks'] = '%s';
+
+            // open container
+            $return['iconlinks'] = '<ul class="site__iconlinks">';
+            
+            // iterate thru icon links
+            // $rec['icon'] is an object
+            foreach ($res as $rec) {
+                
+                // open item
+                $return['iconlinks'] .= '<li>';
+                
+                // write anchor if exists
+                $return['iconlinks'] .= ( !empty($rec['url']) ? '<a href="'.$rec['url'].'">' : '' );
+
+                // get icon
+                $icon = ( 
+                    // if svg url exists
+                    ( !empty($rec['image']['url']) ) 
+                    // use svg url
+                    ? '<figure><img src="'.$rec['image']['url'].'" alt=""></figure>' 
+                    // else use font icon
+                    : '<i class="'.$rec['icon']->class.'"></i>'
+                );
+                
+                // compile the output
+                $return['iconlinks'] .= sprintf(
+                    $guide['iconlinks']
+                    ,$icon
+                );
+                
+                // close anchor tag if exists
+                $return['iconlinks'] .= ( !empty($rec['url']) ? '</a>' : '' );
+
+                // close line item
+                $return['iconlinks'] .= '</li>';
+            }
+
+            // close container
+            $return['iconlinks'] .= '</ul>';
+
+            // return compiled string
+            return $return['iconlinks'];
+        }
+        else {
+            // something went wrong...
+            return false;
+        }
+    }
+}   // end return_icon_links
+
+
+
+// 
+// 
+// 
 
 
 
@@ -91,7 +172,10 @@ function get_menu_items($menu_style, $item){
 
 function my_acf_init() {
 	
-	acf_update_setting('google_api_key', 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA');
+    acf_update_setting('google_api_key', 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY');
+    if( empty(get_option('acfext_google_api_key')) ){
+        add_option('acfext_google_api_key', 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY');
+    }
 }
 
 add_action('acf/init', 'my_acf_init');
@@ -157,7 +241,7 @@ function get_site_nav($pre = 'navlinks')
 
         // create an unwrapped site nav
         $site__nav = wp_nav_menu(array(
-            'menu' => 'nav__header', 'container' => '', 'items_wrap' => '<ul class="nav-menu navlinks">%3$s</ul>', 'walker' => new NavWalker, 'echo' => false
+            'menu' => 'nav__header', 'container' => '', 'items_wrap' => '<ul class="nav-menu navlinks">%3$s</ul>', 'walker' => new Rational_Walker_Nav_Menu, 'echo' => false
         ));
         return $site__nav;
     }
@@ -200,17 +284,18 @@ function get_gmaps_api_key()
 function get_phone_number_1()
 {
     $company_info = get_field('company_info', 'options');
-    return (!empty($company_info['phone_number_1']) ? $company_info['phone_number_1'] : '');
+    return (!empty($company_info['phone_number_1']) ? '<a href="tel:'.$company_info['phone_number_1'].'">'.$company_info['phone_number_1'].'</a>' : '');
 }
 
 function get_phone_number_2()
 {
     $company_info = get_field('company_info', 'options');
-    return (!empty($company_info['phone_number_2']) ? $company_info['phone_number_2'] : '');
+    return (!empty($company_info['phone_number_2']) ? '<a href="tel:'.$company_info['phone_number_1'].'">'.$company_info['phone_number_2'].'</a>' : '');
 }
 
 function get_email()
 {
+    $company_info = get_field('company_info', 'options');
     return (!empty($company_info['email']) ? $company_info['email'] : '');
 }
 
@@ -307,34 +392,44 @@ function get_full_address_br()
     return $full_address_br;
 }
 
-function get_full_address()
+function get_full_address($icon = false)
 {
+    // get data
     $company_info = get_field('company_info', 'options');
+    $street_1 = (!empty($company_info['location']['address_street']) ? '<span>' . $company_info['location']['address_street'] . '</span>' : '');
+    $street_2 = (!empty($company_info['location']['address_street_2']) ? '<span>' . $company_info['location']['address_street_2'] . '</span>' : '');
+    $city = ( !empty($company_info['location']['address_city'])  ? $company_info['location']['address_city'] . ',' : '');
+    $state = ( !empty($company_info['location']['address_state'])  ? ' '.$company_info['location']['address_state'] : '');
+    $zip = ( !empty($company_info['location']['address_postcode'])  ? ' '.$company_info['location']['address_postcode'] : '');
 
-    $location = ($company_info['location'] ? $company_info['location'] : '');
 
-    $full_address = '';
+    if( $icon == true ){
 
-    if (!empty($location['address_street'])) {
-        $street_1 = $location['address_street'];
-        $street_2 = $location['address_street_2'];
-        $city = $location['address_city'];
-        $state = $location['address_state'];
-        $postcode = $location['address_postcode'];
-        $country = $location['address_country'];
-
-        $format_full_address = '%s %s, %s, %s %s';
-
-        $full_address = sprintf(
-            $format_full_address,
-            $street_1,
-            $street_2,
-            $city,
-            $state,
-            $postcode
-            // ,$country
-        );
     }
-    return $full_address;
+    
+    // create return string
+    $return['address'] = '';
+
+    // create format string
+    $guide['address'] = '
+        <div class="site__address">
+            %s
+            <div>
+                %s
+                %s
+                %s
+            </div>
+        </div>
+    ';
+
+    // wring return string
+    $return['address'] .= sprintf(
+        $guide['address']
+        ,( ($icon == true ) ? '<i class="fas fa-map-marker-alt"></i>' : '' )
+        ,$street_1
+        ,$street_2
+        ,'<span>'.$city.$state.$zip.'</span>'
+    );
+    return $return['address'];
 }
 ?>

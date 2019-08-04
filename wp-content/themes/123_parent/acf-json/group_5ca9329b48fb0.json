@@ -183,7 +183,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Default Testimonials Post Template",
-    "modified": 1563127687
+    "modified": 1563672988
 }

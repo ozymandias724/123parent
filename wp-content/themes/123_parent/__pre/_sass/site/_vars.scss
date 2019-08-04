@@ -16,6 +16,7 @@ $sizing : (
             full : 100%
             ,wide : 90%
             ,normal : 80%
+            ,medium : 80%
             ,narrow : 65%
         )
     )
@@ -37,18 +38,19 @@ $sizing : (
 
 $colors : (
     white : (
-        full : #ffffff
-    ),
-    gray : (
-        light : lightgray,
-        mid : #1d1d1d
+        full : #ffffff,
+        light : #d0d0d0,
+        mid : #a2a2a2,
+        dark : #343434
     ),
     black : (
-        full : #000000
+        full : #000000,
+        dark : #1c1c1c,
+        mid : #313131,
+        light : #4d4d4d
     ),
-    primary : green,
-    secondary : blue,
-    accent : #376494
+    primary : #cb8568,
+    secondary : #3a4e62
 );
 
 $bp : (

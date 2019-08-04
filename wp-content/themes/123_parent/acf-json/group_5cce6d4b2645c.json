@@ -112,7 +112,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Default Post Template (Blog Posts)",
-    "modified": 1563096958
+    "modified": 1563672986
 }

@@ -112,7 +112,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Default Services Post Template",
-    "modified": 1563127871
+    "modified": 1563672988
 }

@@ -18,63 +18,6 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5d33773f8f9b4",
-                    "label": "Reseller",
-                    "name": "reseller",
-                    "type": "group",
-                    "instructions": "Add a logo and link to the reseller page",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5d33775e8f9b5",
-                            "label": "Logo",
-                            "name": "logo",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_5d3377648f9b6",
-                            "label": "Link",
-                            "name": "link",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": ""
-                        }
-                    ]
-                },
-                {
                     "key": "field_5cf9939ae747d",
                     "label": "Width",
                     "name": "width",
@@ -157,7 +100,7 @@
                     "key": "field_5cfc12c1ce0cd",
                     "label": "Payment Types",
                     "name": "payment_types",
-                    "type": "repeater",
+                    "type": "clone",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -166,37 +109,139 @@
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "",
+                    "clone": [
+                        "group_5d3c6f8aea7da"
+                    ],
+                    "display": "group",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_5d3c6b50384ab",
+                    "label": "Copyright Banner",
+                    "name": "copyright_banner",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5cfc12ccce0ce",
-                            "label": "Icon",
-                            "name": "icon",
-                            "type": "font-awesome",
-                            "instructions": "",
+                            "key": "field_5d3c6b65384ac",
+                            "label": "Copyright Text",
+                            "name": "copyright_text",
+                            "type": "text",
+                            "instructions": "Enter the copyright text here",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
-                            "icon_sets": [
-                                "fab"
-                            ],
-                            "custom_icon_set": "",
-                            "default_label": "",
                             "default_value": "",
-                            "save_format": "element",
-                            "allow_null": 0,
-                            "show_preview": 1,
-                            "enqueue_fa": 0,
-                            "fa_live_preview": "",
-                            "choices": []
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5d3c6b6f384ad",
+                            "label": "Copyright URL",
+                            "name": "copyright_url",
+                            "type": "url",
+                            "instructions": "Enter a URL for the copyright to link to",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5d33773f8f9b4",
+                            "label": "Reseller",
+                            "name": "reseller",
+                            "type": "group",
+                            "instructions": "Add the logo and a link for the re-seller of this website<br>\r\ni.e., 123websites.net",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "100",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5d33775e8f9b5",
+                                    "label": "Logo",
+                                    "name": "logo",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5d3377648f9b6",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_5d3cd23d62e47",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
                         }
                     ]
                 }
@@ -235,5 +280,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563658704
+    "modified": 1564275997
 }

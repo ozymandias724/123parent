@@ -181,7 +181,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 0,
+    "active": false,
     "description": "Grid of Post Objects",
-    "modified": 1563252706
+    "modified": 1563672986
 }

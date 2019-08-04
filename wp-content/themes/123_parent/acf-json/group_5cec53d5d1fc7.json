@@ -117,7 +117,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 0,
+    "active": false,
     "description": "A basic form block with heading, subheading and a form selection",
-    "modified": 1563252373
+    "modified": 1563672987
 }

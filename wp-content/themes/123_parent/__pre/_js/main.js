@@ -1,8 +1,6 @@
 /**
 *  The Main JS File
 */
-
-
 // get libraries
 import $ from 'jquery';                         // latest jquery prereq
 import slick from 'slick-carousel-browserify';  // slick slider (carousels)
@@ -23,6 +21,39 @@ var Coupons = {}
 $(document).ready(function()
 {
 
+    $('main').css('margin-top', $('header.header').innerHeight());
+
+  
+  
+    Theme.MainNav = {
+
+        _init : function(){
+
+            
+            if( $('header.header nav.navlinks').length ){
+                
+                // clicked link that is a parent (has children)
+                $('nav.navlinks li.parent > a').on('click', Theme.MainNav._didClickParentLink);
+
+            }
+            
+        },
+        _didClickParentLink : function(e){
+            $(this).parent('li').toggleClass('open');
+        },
+        
+    };
+    Theme.MainNav._init();
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
     /* 
     *  Print coupon 
     */
@@ -48,29 +79,29 @@ $(document).ready(function()
      * 
      *  If Header Six Exists
      */
-    if( $('header.header').length ) {
+    // if( $('header.header').length ) {
         
-        var headerID = $('header.header').attr('id');
+    //     var headerID = $('header.header').attr('id');
         
-        headerID = headerID.substr(headerID.indexOf('header') + 7);
+    //     headerID = headerID.substr(headerID.indexOf('header') + 7);
 
-        var headers = ['two', 'four', 'five', 'six','seven', 'nine', 'ten'];
-        var headersWithDiv = ['four', 'nine'];
+    //     var headers = ['two', 'four', 'five', 'six','seven', 'nine', 'ten'];
+    //     var headersWithDiv = ['four', 'nine'];
 
-        if( $('header.header').css('position') == 'fixed' && headers.includes(headerID) ){
+    //     if( $('header.header').css('position') == 'fixed' && headers.includes(headerID) ){
 
-            var offset = 0;
+    //         var offset = 0;
 
-            if( headersWithDiv.includes(headerID) ){
-                offset = ( $('#popups__banner').length > 0 ? $('header > div').height() + $('#popups__banner').height() : $('header > div').height() );
-            }else{
-                offset = ( $('#popups__banner').length > 0 ? $('header').height() + $('#popups__banner').height() : $('header').height() );
-            }
-            if( $('main').attr('id') !== 'cpt_page_blog' ){
-                $('main').css('margin-top', offset - 1);
-            }
-        }
-    }
+    //         if( headersWithDiv.includes(headerID) ){
+    //             offset = ( $('#popups__banner').length > 0 ? $('header > div').height() + $('#popups__banner').height() : $('header > div').height() );
+    //         }else{
+    //             offset = ( $('#popups__banner').length > 0 ? $('header').height() + $('#popups__banner').height() : $('header').height() );
+    //         }
+    //         if( $('main').attr('id') !== 'cpt_page_blog' ){
+    //             $('main').css('margin-top', offset - 1);
+    //         }
+    //     }
+    // }
     
 
     /**
@@ -291,21 +322,6 @@ $(document).ready(function()
         Blocks.FoodMenus._init();
     }
 
-    /**
-     * Handle the basics of the nav unspecific to a header style
-     */
-    Theme.Nav = {
-        links: $(".navlinks-item-link"),
-
-        _init: function () {
-            Theme.Nav.links.on("click", Theme.Nav._clickedNavLink);
-        },
-        _clickedNavLink: function (e) {
-            Theme.Nav.links.removeClass("active_menu_link");
-            $(this).addClass("active_menu_link");
-        }
-    }
-    Theme.Nav._init();
 
 });
 

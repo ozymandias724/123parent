@@ -18,7 +18,7 @@ $nav6_width: 1200px;
             // Address and Phone number
             .site__iconlink-phone,
             .site__iconlink-address {
-                color: $white;
+                color: getVar($colors, white, full);
                 margin-right: 10px;
                 font-size: 13px;
                 padding: 0 10px;

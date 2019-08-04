@@ -1,63 +1,50 @@
 <?php 
+    // instantiate navhandler class
+    // $navHandler = new NavHandler();
 
-// instantiate navhandler class
-$navHandler = new NavHandler();
+    // get header settings field group
+    $settings = get_field('header_settings', 'options');
+    $company_info = get_field('company_info', 'options');
 
-// required vars
-$enabled_theme = wp_get_theme()->Name;
-
-
-$header = get_field('header', 'options');
-$use_custom_header = $header['select_style'];
-$selected_header = $header['style'];
-
-
-// use default header
-if (  $use_custom_header != '1' ) {
-
-    if( $enabled_theme === '123_one' || $enabled_theme === '123_two' || $enabled_theme === '123_parent' ){
-        echo $navHandler->header_two;
-    }
-    else if( $enabled_theme === '123_three' ){
-        echo $navHandler->header_three;
-    }
-    else if( $enabled_theme === '123_four' ){
-        echo $navHandler->header_four;
-    }
-}
-// use custom header
-else if( $use_custom_header == '1' ){
-
-    if( $selected_header === 'one' ){
-        echo $navHandler->header_one;
-    }
-    else if( $selected_header === 'two' ){
-        echo $navHandler->header_two;
-    }
-    else if( $selected_header === 'three' ){
-        echo $navHandler->header_three;
-    }
-    else if( $selected_header === 'four' ){
-        echo $navHandler->header_four;
-    }
-    else if( $selected_header === 'five' ){
-        echo $navHandler->header_five;
-    }
-    else if( $selected_header === 'six' ){
-        echo $navHandler->header_six;
-    }
-    else if( $selected_header === 'seven' ){
-        echo $navHandler->header_seven;
-    }
-    else if( $selected_header === 'eight' ){
-        echo $navHandler->header_eight;
-    }
-    else if( $selected_header === 'nine' ){
-        echo $navHandler->header_nine;
-    }
-    else if( $selected_header === 'ten' ){
-        echo $navHandler->header_ten;
-    }
+    $return['header_nav'] = '';
     
-}
+    $guide['header_nav'] = '
+        <header class="header header__style_one">
+            <div class="container">
+
+                <div>
+                    <figure class="logo">
+                        <img src="%s" width="240">
+                    </figure>    
+                    <div>
+                        %s
+                        <div class="site__telnums">
+                            <p>Call us Today</p>
+                            %s
+                            %s
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    %s
+                    %s
+                </div>
+            </div>
+        </header>
+    ';
+
+
+
+    $return['header_nav'] .= sprintf(
+        $guide['header_nav']
+        ,$settings['logo']['url']
+        ,get_full_address($icon = true)
+        ,(!empty($company_info['phone_number_1']) ? '<a class="site__iconlink site__iconlink-phone" href="tel:' . $company_info['phone_number_1'] . '">' . $company_info['phone_number_1'] . '</a>' : '')
+        ,(!empty($company_info['phone_number_2']) ? '<a class="site__iconlink site__iconlink-phone" href="tel:' . $company_info['phone_number_2'] . '">' . $company_info['phone_number_2'] . '</a>' : '')
+        ,wp_nav_menu(array('theme_location'=>'header','walker'=> new Rational_Walker_Nav_Menu,'echo'=>false,'container' => 'nav','container_class'=>'navlinks'))
+        ,get_social_icons()
+    );
+    
+
+    echo $return['header_nav'];
  ?>

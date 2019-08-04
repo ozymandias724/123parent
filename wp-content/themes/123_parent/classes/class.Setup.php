@@ -43,8 +43,10 @@ class SetupTheme
 		add_theme_support( 'post-thumbnails' );
         add_theme_support( 'custom-logo' );
 
-        register_nav_menu( 'nav__header', 'Header' );
-        register_nav_menu( 'nav__footer', 'Footer' );
+        register_nav_menus(array(
+            'header' => 'Header Nav'
+            ,'footer' => 'Footer Nav'
+        ));
 	}
 	// 
 	public static function init(){
@@ -105,7 +107,6 @@ class SetupTheme
 	    wp_enqueue_script( 'main' );
 	}
 	public static function enqueue_styles(){
-        wp_enqueue_style('yourtheme-google-fonts', yourtheme_fonts_url(), array(), null);
         wp_enqueue_style( 'main' );
 	}
 

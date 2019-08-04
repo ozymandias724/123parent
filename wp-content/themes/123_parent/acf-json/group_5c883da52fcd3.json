@@ -344,7 +344,9 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": ""
+                            "mime_types": "",
+                            "return_format": "array",
+                            "preview_size": "medium"
                         }
                     ]
                 },
@@ -520,7 +522,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "block",
+                    "layout": "table",
                     "sub_fields": [
                         {
                             "key": "field_5d2d5230407e5",
@@ -612,7 +614,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "block",
+                    "layout": "table",
                     "sub_fields": [
                         {
                             "key": "field_5cf9966e5088f",
@@ -639,7 +641,7 @@
                                 "bottomright": "Bottom Right"
                             },
                             "allow_null": 0,
-                            "default_value": "",
+                            "default_value": "middlecenter",
                             "layout": "horizontal",
                             "return_format": "value"
                         },
@@ -908,5 +910,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563251325
+    "modified": 1563748286
 }

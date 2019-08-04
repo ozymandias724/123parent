@@ -1,0 +1,148 @@
+header.header {
+    $g: getVar($sizing, gutter, px, normal);
+
+    position: fixed;
+    z-index: 99;
+    display: block;
+    width: 100%;
+
+    >.container {
+        margin: 0 auto;
+    }
+
+    .logo {
+        height: 100%;
+        padding: ($g / 2);
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .site__social-media {
+        margin: 0 ($g / 2) 0 0;
+    }
+
+    // nav.navlinks container for main nav
+    .navlinks {
+
+        // create full height
+        >ul,
+        li,
+        a,
+        & {
+            height: 100%;
+        }
+
+        .sub-menu {
+            // display: flex;
+            flex-flow: column nowrap;
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            z-index: 9;
+            min-width: 100%;
+            >li {
+                background-color: rgba(getVar($colors, white, light), 1);
+                >a {
+                    color: rgba(getVar($colors, black, dark), 1);
+                }
+            }
+        }
+
+        >ul {
+            display: flex;
+            flex-flow: row nowrap;
+
+            >li {
+                position: relative;
+
+                &:last-of-type {
+                    margin: 0 0 0 0;
+                }
+
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    border: none;
+                    color: rgba(getVar($colors, black, dark), 1);
+                    padding: ($g / 2);
+                    white-space: nowrap;
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: rgba(getVar($colors, black, dark), 1);
+                        color: rgba(getVar($colors, white, light), 1);
+
+                    }
+                }
+
+                &.parent {
+                    &:hover {
+                        >a {
+                            background-color: rgba(getVar($colors, black, dark), 1);
+                            color: rgba(getVar($colors, white, light), 1);
+                        }
+
+                        .sub-menu {
+                            display: flex;
+                        }
+                    }
+                }
+
+                &.open {
+                    .sub-menu {
+                        display: flex;
+                    }
+                }
+
+                // the current page
+                &.active {
+                    >a {
+                        background-color: rgba(getVar($colors, black, dark), 1);
+                        color: rgba(getVar($colors, white, light), 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 
+//  for the styles
+// 
+header.header__style_one {
+    $g: getVar($sizing, gutter, px, normal);
+
+    >.container {
+        >div {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            &:first-of-type {
+                height: 92px;
+                background-color: rgba(getVar($colors, white, mid), 1);
+                color: rgba(getVar($colors, white, full), 1);
+
+                >div {
+                    height: 100%;
+                    display: flex;
+                    flex-flow: row nowrap;
+
+                    .site__telnums {
+                        margin: 0 ($g / 2) 0 $g;
+                    }
+                }
+            }
+
+            &:last-of-type {
+                background-color: rgba(getVar($colors, white, light), 1);
+            }
+        }
+    }
+}

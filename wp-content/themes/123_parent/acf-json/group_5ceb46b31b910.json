@@ -186,7 +186,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 0,
+    "active": false,
     "description": "The Food Menus Block (complex)",
-    "modified": 1563235561
+    "modified": 1563672987
 }

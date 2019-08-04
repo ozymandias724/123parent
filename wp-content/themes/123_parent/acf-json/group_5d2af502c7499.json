@@ -55,7 +55,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Default Gallery Post Template",
-    "modified": 1563096397
+    "modified": 1563672987
 }

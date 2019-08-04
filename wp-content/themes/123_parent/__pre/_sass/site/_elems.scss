@@ -1,3 +1,52 @@
+// 
+// 
+// 
+// 
+// 
+// 
+
+
+ul.site__iconlinks {
+    $g : getVar($sizing, gutter, px, small);;
+    display: flex;
+    flex-flow: row wrap;
+    > li {
+        margin: 0 $g $g 0;
+        &:last-of-type {
+            margin: 0 0 $g 0;
+        }
+        // icon
+        i {
+            font-size: 24px;
+            transform: scale(1);
+        }
+        // if this is a link
+        > a {
+            display: block;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  after reset,
 //  adjust elements to brand guidelines
 @media only screen {
@@ -29,6 +78,64 @@
         }
     }
 
+    ul.site__social-media {
+        $g : getVar($sizing, gutter, px, small);
+        display: flex;
+        flex-flow: row nowrap;
+        list-style: none;
+        li {
+            margin: 0 $g 0 0;
+            &:last-of-type {
+                margin: 0 0 0 0;
+            }
+            //Social icons list items links
+            a {
+                display: block;
+                font-size: 2.4rem;
+                transition: color 0.3s;
+                color: rgba(getVar($colors, white, mid), 1);
+                //Social icons list items actions on hover, active and focus
+                &:hover,
+                &:active,
+                &:focus {
+                    color: rgba(getVar($colors, white, mid), 0.7);
+                }
+            }
+        }
+    }
+
+
+    .site__address {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        span {
+            display: block;
+        }
+
+        >i.fas,
+        >div {
+            flex: 0 1 auto;
+            margin: 0 auto;
+        }
+        > div {
+            flex: 1 0 auto;
+        }
+    }
+
+    .site__telnums {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        >a {
+            display: block;
+            color: rgba(getVar($colors, white, full), 1);
+        }
+    }
+
+
     // generic button class; needs some work
     // could be more scalable
     .site__button {
@@ -51,6 +158,7 @@
         color: white;
         box-shadow: inset 0px 0px 15px transparentize(white, 1), 0px 0px 15px transparentize(black, 1);
         transition: box-shadow 0.4s ease;
+
         // 
         &:focus,
         &:active,
@@ -114,10 +222,11 @@
             }
         }
     }
-}// end media query
-@media only screen and (min-width: 640px){
 }
-@media only screen and (min-width: 960px){
-}
-@media only screen and (min-width: 1280px){
-}
+
+// end media query
+@media only screen and (min-width: 640px) {}
+
+@media only screen and (min-width: 960px) {}
+
+@media only screen and (min-width: 1280px) {}

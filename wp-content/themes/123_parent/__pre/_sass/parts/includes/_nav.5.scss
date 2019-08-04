@@ -4,11 +4,11 @@ $nav5_width : 1200px;
     //Header 5
     header#opt_header_five {
         padding: 0px;
-        background-color: $black;
+        background-color: getVar($colors, black, full);
         //Top part of the header (social icons, address, phone number and quote button)
         > div:first-of-type {
-            background-color: $black;
-            color: $white;
+            background-color: getVar($colors, black, full);
+            color: getVar($colors, white, full);
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
@@ -25,7 +25,7 @@ $nav5_width : 1200px;
                     a {
                         padding: 0 10px;
                         transition: color 0.3s;
-                        color: $white;
+                        color: getVar($colors, white, full);
                         display: inline-block;
                         //Social icons list items icons
                         > i {
@@ -95,11 +95,11 @@ $nav5_width : 1200px;
         }
         // Bottom bar of the header (logo and navigational menu)
         .outer_div {
-            background-color: $white;
+            background-color: getVar($colors, white, full);
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
         }
         .inner_div {
-            background-color: $white;
+            background-color: getVar($colors, white, full);
             display: flex;
             align-items: center;
             flex-flow: row nowrap;
@@ -137,10 +137,10 @@ $nav5_width : 1200px;
                             &:active, 
                             &:focus {
                                 background-color: $accent;
-                                color: $white;
+                                color: getVar($colors, white, full);
                                 .active_menu_link { 
                                     background-color: $accent;
-                                    color: $white;
+                                    color: getVar($colors, white, full);
                                 }
                             }
                         }

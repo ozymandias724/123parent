@@ -72,14 +72,14 @@
                     }
 
                     > div {
-                        color: getVar($colors, gray, mid);
+                        color: getVar($colors, white, mid);
                         @include fontS-14;
-                        color: getVar($colors, gray, mid);
+                        color: getVar($colors, white, mid);
                         line-height: 2.3rem;
                         display: block;
                         font-weight: 500;
                         > a[class^='area__phone'] {
-                            color: getVar($colors, gray, mid);
+                            color: getVar($colors, white, mid);
                             font-weight: 500;
                             > span {
                                 font-weight: 600;

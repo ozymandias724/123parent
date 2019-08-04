@@ -34,9 +34,25 @@ var Blocks = {}; // tbd
 var Coupons = {}; // certain things should wait until the document is ready
 
 (0, _jquery["default"])(document).ready(function () {
+  (0, _jquery["default"])('main').css('margin-top', (0, _jquery["default"])('header.header').innerHeight());
+  Theme.MainNav = {
+    _init: function _init() {
+      if ((0, _jquery["default"])('header.header nav.navlinks').length) {
+        // clicked link that is a parent (has children)
+        (0, _jquery["default"])('nav.navlinks li.parent > a').on('click', Theme.MainNav._didClickParentLink);
+      }
+    },
+    _didClickParentLink: function _didClickParentLink(e) {
+      (0, _jquery["default"])(this).parent('li').toggleClass('open');
+    }
+  };
+
+  Theme.MainNav._init();
   /* 
   *  Print coupon 
   */
+
+
   Coupons = {
     _init: function _init() {
       Coupons.printCoupon();
@@ -57,28 +73,24 @@ var Coupons = {}; // certain things should wait until the document is ready
    * 
    *  If Header Six Exists
    */
+  // if( $('header.header').length ) {
+  //     var headerID = $('header.header').attr('id');
+  //     headerID = headerID.substr(headerID.indexOf('header') + 7);
+  //     var headers = ['two', 'four', 'five', 'six','seven', 'nine', 'ten'];
+  //     var headersWithDiv = ['four', 'nine'];
+  //     if( $('header.header').css('position') == 'fixed' && headers.includes(headerID) ){
+  //         var offset = 0;
+  //         if( headersWithDiv.includes(headerID) ){
+  //             offset = ( $('#popups__banner').length > 0 ? $('header > div').height() + $('#popups__banner').height() : $('header > div').height() );
+  //         }else{
+  //             offset = ( $('#popups__banner').length > 0 ? $('header').height() + $('#popups__banner').height() : $('header').height() );
+  //         }
+  //         if( $('main').attr('id') !== 'cpt_page_blog' ){
+  //             $('main').css('margin-top', offset - 1);
+  //         }
+  //     }
+  // }
 
-
-  if ((0, _jquery["default"])('header.header').length) {
-    var headerID = (0, _jquery["default"])('header.header').attr('id');
-    headerID = headerID.substr(headerID.indexOf('header') + 7);
-    var headers = ['two', 'four', 'five', 'six', 'seven', 'nine', 'ten'];
-    var headersWithDiv = ['four', 'nine'];
-
-    if ((0, _jquery["default"])('header.header').css('position') == 'fixed' && headers.includes(headerID)) {
-      var offset = 0;
-
-      if (headersWithDiv.includes(headerID)) {
-        offset = (0, _jquery["default"])('#popups__banner').length > 0 ? (0, _jquery["default"])('header > div').height() + (0, _jquery["default"])('#popups__banner').height() : (0, _jquery["default"])('header > div').height();
-      } else {
-        offset = (0, _jquery["default"])('#popups__banner').length > 0 ? (0, _jquery["default"])('header').height() + (0, _jquery["default"])('#popups__banner').height() : (0, _jquery["default"])('header').height();
-      }
-
-      if ((0, _jquery["default"])('main').attr('id') !== 'cpt_page_blog') {
-        (0, _jquery["default"])('main').css('margin-top', offset - 1);
-      }
-    }
-  }
   /**
    * FadeEffects
    * @type {Object}
@@ -305,23 +317,6 @@ var Coupons = {}; // certain things should wait until the document is ready
 
     Blocks.FoodMenus._init();
   }
-  /**
-   * Handle the basics of the nav unspecific to a header style
-   */
-
-
-  Theme.Nav = {
-    links: (0, _jquery["default"])(".navlinks-item-link"),
-    _init: function _init() {
-      Theme.Nav.links.on("click", Theme.Nav._clickedNavLink);
-    },
-    _clickedNavLink: function _clickedNavLink(e) {
-      Theme.Nav.links.removeClass("active_menu_link");
-      (0, _jquery["default"])(this).addClass("active_menu_link");
-    }
-  };
-
-  Theme.Nav._init();
 });
 Headers.Eight = {
   header: (0, _jquery["default"])("header.header#opt_header_eight"),

@@ -61,7 +61,7 @@ $nav4_width : 1200px;
                 border-bottom: 1px solid transparent;
                 opacity: 1;
                 transition: opacity 0.3s;
-                color:$white;
+                color:getVar($colors, white, full);
                 line-height: 68px;
                 display: inline-block;
                 text-align: right;

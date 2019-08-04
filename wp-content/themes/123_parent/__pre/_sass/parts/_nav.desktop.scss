@@ -27,15 +27,15 @@ $nav_6_quote_button_text: #fff;
 
 
 $second_primary : #b21717;
-$black : black;
-$black_opacity_none : rgba(0, 0, 0, 0);
+getVar($colors, black, full) : black;
+getVar($colors, black, full)_opacity_none : rgba(0, 0, 0, 0);
 $second_black : #333333;
 $third_black : #383838;
 $opacity_level_below_one : 0.8;
 $opacity_level_below_one_2 : 0.3;
-$black_and_opacity_level_below_one : rgba(0, 0, 0, $opacity_level_below_one_2);
+getVar($colors, black, full)_and_opacity_level_below_one : rgba(0, 0, 0, $opacity_level_below_one_2);
 
-$white : #fff;
+getVar($colors, white, full) : #fff;
 $tint : #fff;
 $blue: #32A2AE;
 $blue: #32A2AE;
@@ -89,7 +89,7 @@ $max_width: 1200px;
         }
 
         // Navigational menu unordered list
-        ul.navlinks {
+        div.navlinks > ul {
             list-style-type: none;
             display: flex;
         }
@@ -244,7 +244,7 @@ $max_width: 1200px;
             position: fixed;
             opacity: 1;
             transform: translateX(0%);
-            box-shadow: -6px 0px 25px 0px $black;
+            box-shadow: -6px 0px 25px 0px getVar($colors, black, full);
         }
 
         // Navigational menu unordered list
@@ -263,7 +263,7 @@ $max_width: 1200px;
         // Navigational menu unordered list items links 
         .navlinks-item-link {
             border-bottom: 1px solid lightgrey;
-            color: $black;
+            color: getVar($colors, black, full);
             padding: 12px 12px 12px 0;
             display: block;
             margin: 0 auto;
@@ -279,7 +279,7 @@ $max_width: 1200px;
             &:focus,
             .active_menu_link {
                 opacity: 1;
-                border-bottom: 1px solid $black;
+                border-bottom: 1px solid getVar($colors, black, full);
             }
         }
 
@@ -290,11 +290,11 @@ $max_width: 1200px;
             border-radius: 20px;
             text-align: center;
             color: white;
-            background-color: $black;
+            background-color: getVar($colors, black, full);
             font-weight: 500;
             opacity: $opacity_level_below_one;
             transition: opacity 0.3s, background-color 0.3s, color 0.3s;
-            border: 1px solid $black;
+            border: 1px solid getVar($colors, black, full);
             position: relative;
             left: 50%;
             transform: translateX(-50%);
@@ -309,8 +309,8 @@ $max_width: 1200px;
             &:active,
             &:focus {
                 opacity: 1;
-                color: $black;
-                background-color: $black_opacity_none;
+                color: getVar($colors, black, full);
+                background-color: getVar($colors, black, full)_opacity_none;
             }
         }
     }

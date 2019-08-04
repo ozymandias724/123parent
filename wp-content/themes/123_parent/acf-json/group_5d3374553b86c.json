@@ -7,7 +7,7 @@
             "label": "Header Settings",
             "name": "header_settings",
             "type": "group",
-            "instructions": "",
+            "instructions": "Configure the header",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -41,7 +41,7 @@
                     "label": "Fade Background",
                     "name": "fade_background",
                     "type": "true_false",
-                    "instructions": "",
+                    "instructions": "Check to have a transparent header background that fades in when the page is scrolled.\r\n<br>\r\ni.e., the nav is floating over the hero",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -51,16 +51,16 @@
                     },
                     "message": "",
                     "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "Fade In",
-                    "ui_off_text": "Always Show"
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 },
                 {
                     "key": "field_5cbc0a4055691",
                     "label": "Select Style",
                     "name": "select_style",
                     "type": "true_false",
-                    "instructions": "",
+                    "instructions": "Check to use a custom header style",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -71,15 +71,15 @@
                     "message": "",
                     "default_value": 0,
                     "ui": 1,
-                    "ui_on_text": "Use Custom Style",
-                    "ui_off_text": "Use Default Style"
+                    "ui_on_text": "Custom Style",
+                    "ui_off_text": "Default Style"
                 },
                 {
                     "key": "field_5cbc02fd6c968",
                     "label": "Style",
                     "name": "style",
                     "type": "select",
-                    "instructions": "",
+                    "instructions": "Select the header style to use",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -96,23 +96,76 @@
                         "id": ""
                     },
                     "choices": {
-                        "one": "One",
-                        "two": "Two",
-                        "three": "Three",
-                        "four": "Four",
-                        "five": "Five",
-                        "six": "Six",
-                        "seven": "Seven",
-                        "eight": "Eight",
-                        "nine": "Nine",
-                        "ten": "Ten"
+                        "1": "One",
+                        "2": "Two",
+                        "3": "Three",
+                        "4": "Four",
+                        "5": "Five",
+                        "6": "Six",
+                        "7": "Seven",
+                        "8": "Eight",
+                        "9": "Nine",
+                        "10": "Ten"
                     },
                     "default_value": [],
                     "allow_null": 1,
                     "multiple": 0,
-                    "ui": 1,
-                    "ajax": 0,
+                    "ui": 0,
                     "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5d33bfa2edf70",
+                    "label": "Logo",
+                    "name": "logo",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d3415d211639",
+                    "label": "Width",
+                    "name": "width",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "full": "Full",
+                        "wide": "Wide",
+                        "medium": "Medium",
+                        "narrow": "Narrow"
+                    },
+                    "default_value": [
+                        "full"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
                     "placeholder": ""
                 }
             ]
@@ -150,5 +203,5 @@
     ],
     "active": 1,
     "description": "Configure the Header",
-    "modified": 1563658656
+    "modified": 1563694577
 }

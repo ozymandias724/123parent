@@ -268,7 +268,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "post type is food menu",
-    "modified": 1561085836
+    "modified": 1563672987
 }

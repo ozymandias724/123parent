@@ -202,7 +202,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Default Areas Served Post Template",
-    "modified": 1563248339
+    "modified": 1563672988
 }

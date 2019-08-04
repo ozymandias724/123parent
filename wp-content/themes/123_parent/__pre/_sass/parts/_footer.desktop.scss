@@ -2,9 +2,9 @@
 
     // COMMON FOOTER DESIGNS SCSS
     footer {
-        background-color: getVar($colors, accent);
 
-        div.container {
+        >.container {
+            background-color: rgba(getVar($colors, black, full), 1);
             margin: 0 auto;
             display: flex;
             flex-flow: row wrap;
@@ -13,8 +13,8 @@
                 width: getVar($sizing, content, percent, narrow);
             }
 
-            &.normal {
-                width: getVar($sizing, content, percent, normal);
+            &.medium {
+                width: getVar($sizing, content, percent, medium);
             }
 
             &.wide {
@@ -92,7 +92,7 @@
 
                         i {
                             @include fontS-20;
-                            color: $white;
+                            color: getVar($colors, white, full);
                         }
 
                         &:hover,
@@ -122,7 +122,7 @@
             //Phone numbers
             a[class^='footer_phone'] {
                 display: block;
-                color: $white;
+                color: getVar($colors, white, full);
                 font-weight: 400;
                 @include fontS-14;
                 margin-right: 15px;
@@ -183,7 +183,7 @@
 
             h3 {
                 border-bottom: 4px dotted getVar($colors, white, full);
-                color: $white;
+                color: getVar($colors, white, full);
                 padding: 0 0 10px 0;
                 font-weight: 700;
                 margin-bottom: 5px;
@@ -401,7 +401,7 @@
 
                 >div#footer_nav {
                     margin-top: 10px;
-                    border-bottom: 4px dotted $white;
+                    border-bottom: 4px dotted getVar($colors, white, full);
 
                     >nav>ul.navlinks {
                         margin-bottom: 15px;
@@ -460,7 +460,7 @@
 
                     >h3 {
                         margin-right: 20px;
-                        color: $white;
+                        color: getVar($colors, white, full);
                         text-transform: uppercase;
                         font-weight: 700;
                         @include fontS-14;
@@ -509,8 +509,8 @@
 
                 #footer_nav {
                     margin-top: 20px;
-                    border-top: 2px solid $white;
-                    border-bottom: 2px solid $white;
+                    border-top: 2px solid getVar($colors, white, full);
+                    border-bottom: 2px solid getVar($colors, white, full);
                     padding: 10px 0;
 
                     .navlinks {

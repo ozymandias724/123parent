@@ -131,7 +131,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 0,
+    "active": false,
     "description": "Basic Heading Block",
-    "modified": 1563251758
+    "modified": 1563672987
 }
