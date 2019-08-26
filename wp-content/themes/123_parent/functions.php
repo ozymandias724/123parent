@@ -1,9 +1,7 @@
 <?php
-/**
-* 
-*/
 // 
-// libs
+// 
+// library / requirements
 require('includes/util.general.php');       // helpers
 require('includes/acf.extensions.php');     // php extensions for acf (options pages, manually defined fields, other stuff?)
 require('classes/class.NavWalker.php');     // wordpress built in nav
@@ -19,7 +17,9 @@ require('classes/ext.kirki.php');
 
 
 
-// 
+// USE THIS HAMMER IF NEED
+// careful! hammer big!
+// remove_theme_mods();
 // 
 // 
 
@@ -91,20 +91,6 @@ if (!function_exists('return_icon_links')) {
     }
 }   // end return_icon_links
 
-
-
-// 
-// 
-// 
-
-
-
-/**
- * Returns the SITE LOGO
- *
- * @return void
- */
-
  
 function get_menu_items($menu_style, $item){
 
@@ -171,11 +157,26 @@ function get_menu_items($menu_style, $item){
 }
 
 function my_acf_init() {
-	
+    
+    // this is required for acf maps to work in the back end!!!
     acf_update_setting('google_api_key', 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY');
+
+    
+    
+    // this is your bullshit kyle....
     if( empty(get_option('acfext_google_api_key')) ){
         add_option('acfext_google_api_key', 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY');
     }
+
+
+
+    // this is used in the theme to get the key w/o exposing it!
+    function get_gmaps_api_key()
+    {
+        return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
+    }
+
+    
 }
 
 add_action('acf/init', 'my_acf_init');
@@ -246,38 +247,10 @@ function get_site_nav($pre = 'navlinks')
         return $site__nav;
     }
 }
-/**
- * TRAINING WIDGET IN DASHBOARD
- */
-if (!function_exists('add_dashboard_widgets')) {
-    function add_dashboard_widgets()
-    {
-        wp_add_dashboard_widget('dashboard_questions_comments_widget', 'Questions, Comments, Concerns ?', 'do_create_training_widget');
-    }
-}
-if (!function_exists('do_create_training_widget')) {
-    function do_create_training_widget($post, $callback_args)
-    {
-        ?>
-        <a target="_blank" href="http://www.123websites.com/training">
-            <img style="width: 100%;" src="http://www.123websites.com/images/training-ad-dashboard.png">
-        </a>
-    <?php
-}
-}
-add_action('wp_dashboard_setup', 'add_dashboard_widgets');
-
-
-
 
 /**
  *       G. PLEASE CLEAN UP THIS JUNK BELOW. 
  */
-
-function get_gmaps_api_key()
-{
-    return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
-}
 
 
 

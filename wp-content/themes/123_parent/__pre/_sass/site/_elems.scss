@@ -7,7 +7,7 @@
 
 
 ul.site__iconlinks {
-    $g : getVar($sizing, gutter, px, small);;
+    $g : getVar($sizing, gutter, px, small);
     display: flex;
     flex-flow: row wrap;
     > li {

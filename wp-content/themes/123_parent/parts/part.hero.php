@@ -4,6 +4,11 @@
 *   Hero Section
 */
 
+
+$testing_mod_alignment = get_theme_mod('site_section_styles-hero-alignment' );
+
+
+
 $fields = get_fields( get_the_ID() );
 
 $header = 'header__' . get_field('header', 'options')['style'];
@@ -85,7 +90,8 @@ $return['fg'] = sprintf(
     $guide['fg']
     ,$return['fgbgtint']
     ,( !empty($bg['color']['text_color']) ? 'color:'.$bg['color']['text_color'].';' : '')
-    ,( !empty($fg['options']['placement']) ? $fg['options']['placement'] : '')
+    // ,( !empty($fg['options']['placement']) ? $fg['options']['placement'] : '')
+    ,$testing_mod_alignment
     ,( !empty($fg['options']['width']) ? $fg['options']['width'] : '')
     ,$return['fg_content']
     ,$return['button']

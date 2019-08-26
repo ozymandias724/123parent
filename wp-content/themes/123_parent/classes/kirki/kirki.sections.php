@@ -23,6 +23,14 @@ Kirki::add_section('site_section_styles-menu', array(
     'priority'       => 160,
 ));
 
+//      Hero Space
+Kirki::add_section('site_section_styles-hero', array(
+    'title'          => esc_html__('Hero', 'kirki'),
+    'description'    => esc_html__('Stylize the Hero Space', 'kirki'),
+    'panel'          => 'site_section_styles',
+    'priority'       => 160,
+));
+
 
 /**
  * Misc

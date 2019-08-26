@@ -33,7 +33,7 @@ $(document).ready(function()
             if( $('header.header nav.navlinks').length ){
                 
                 // clicked link that is a parent (has children)
-                $('nav.navlinks li.parent > a').on('click', Theme.MainNav._didClickParentLink);
+                $('a').on('click', 'nav.navlinks li.parent', Theme.MainNav._didClickParentLink);
 
             }
             

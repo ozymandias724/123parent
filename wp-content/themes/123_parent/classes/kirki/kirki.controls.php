@@ -1,4 +1,7 @@
 <?php
+
+
+// for 1-6 loop conrols for h1-h6
 for ($i=1; $i < 7; $i++) { 
 
     Kirki::add_field('kirki_config', [
@@ -21,8 +24,10 @@ for ($i=1; $i < 7; $i++) {
         ],
     ]);
 }
+// 
 
 
+// the body font literally
 Kirki::add_field('kirki_config', [
     'type'        => 'typography',
     'settings'    => 'site_type-body',
@@ -38,7 +43,7 @@ Kirki::add_field('kirki_config', [
     'transport'   => 'auto',
     'output'      => [
         [
-            'element' => 'body',
+            'element' => 'body', // this goes on the body element
         ],
     ],
 ]);
@@ -58,7 +63,7 @@ Kirki::add_field('kirki_config', [
     'transport'   => 'auto',
     'output'      => [
         [
-            'element' => '.navlinks',
+            'element' => '.navlinks', // 
         ],
     ],
 ]);
@@ -103,5 +108,30 @@ Kirki::add_field('kirki_config', [
     ],
 ]);
 
+
+/**
+ *      Hero Space Controls:
+*/
+
+// create 3x3 button group for alignment of hero foreground
+Kirki::add_field('kirki_config', [
+    'type'        => 'radio-buttonset',
+    'settings'    => 'site_section_styles-hero-alignment',
+    'label'       => esc_html__('Hero Foreground Alignment', 'kirki'),
+    'section'     => 'site_section_styles-hero',
+    'default'     => 'middlecenter',
+    'priority'    => 10,
+    'choices'     => [
+        'topleft'   => esc_html__('', 'kirki'),
+        'topcenter'   => esc_html__('', 'kirki'),
+        'topright'   => esc_html__('', 'kirki'),
+        'middleleft'   => esc_html__('', 'kirki'),
+        'middlecenter'   => esc_html__('', 'kirki'),
+        'middleright'   => esc_html__('', 'kirki'),
+        'bottomleft'   => esc_html__('', 'kirki'),
+        'bottomcenter'   => esc_html__('', 'kirki'),
+        'bottomright'   => esc_html__('', 'kirki'),
+    ],
+]);
 
  ?>

@@ -7,7 +7,7 @@
     <title><?php wp_title(); ?></title>
     <?php 
         $classes = [
-            (!empty(get_field('site_settings', 'options')['content_width']) ? 'sitewidth__'.get_field('site_settings', 'options')['content_width'] : '')
+            get_field('site_settings', 'options')['content_width']
             ,'debug'
         ];
     
