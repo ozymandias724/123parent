@@ -15,6 +15,12 @@
     ';
 
     get_header();
+
+
+
+    die();
+    
+    
 ?>
 <main class="page404">
 
