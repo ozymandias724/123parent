@@ -23,7 +23,7 @@
         "sass": "^1.22.7"
     },
     "dependencies": {
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "magnific-popup": "^1.1.0",
         "masonry-layout": "^4.2.2",
         "paymentfont": "^1.2.5",
